@@ -2,22 +2,115 @@ import { useState } from 'react';
 import ProjectModal from './ProjectModal';
 import type { Project } from './ProjectModal';
 
+// task connect
 import taskConnect1 from '../assets/projects/task-connect/1.png';
 import taskConnect2 from '../assets/projects/task-connect/2.png';
+import taskConnect3 from '../assets/projects/task-connect/3.jpg';
+
+// playbook sales force
+import playbookSalesForce1 from '../assets/projects/playbook/1.png';
+import playbookSalesForce2 from '../assets/projects/playbook/2.png';
+import playbookSalesForce3 from '../assets/projects/playbook/3.png';
 
 const projectsData: Project[] = [
   {
-    id: 1,
     title: 'Task Connect',
     shortDescription: 'A web-based employee and task management platform that helps businesses streamline work schedules, team communication, and attendance tracking efficiently.',
-    longDescription: `Task Connect is a web-based application designed to help companies and organizations manage daily operations in one centralized platform. It offers features such as shift scheduling and task assignment. With a clean, modern interface and multiple sign-in options (Google, email, phone number, and QR code), Task Connect ensures both flexibility and security for users. I developed and maintained this project, frontend and backend implementation, authentication system, and deployment. Task Connect is fully integrated with the Joglo.ink ecosystem and is used in real-world business environments that require efficiency and real-time collaboration.`,
+    longDescription: `
+Task Connect is a web-based application designed to help companies and organizations manage daily operations in one centralized platform. 
+    
+It offers features such as shift scheduling and task assignment. With a clean, modern interface and multiple sign-in options (Google, email, phone number, and QR code), Task Connect ensures both flexibility and security for users. 
+    
+I developed and maintained this project, frontend and backend implementation, authentication system, and deployment. Task Connect is fully integrated with the Joglo.ink ecosystem and is used in real-world business environments that require efficiency and real-time collaboration.`,
     images: [
       taskConnect1,
       taskConnect2,
+      taskConnect3,
     ],
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MySQL', 'NestJS', 'NextAuth', 'JWT'],
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MySQL', 'NestJS', 'NextAuth', 'JWT', 'Prisma ORM', 'React Native'],
     liveUrl: 'https://task.joglo.ink',
-  }
+  },
+  {
+    title: 'Playbook Sales Force',
+    shortDescription: 'A mobile and web-based sales tracking app built with Flutter and Laravel, designed to monitor real-time sales visits, prevent fraudulent reporting, and improve overall team productivity.',
+    longDescription: `
+Playbook Sales Force is a full-stack application developed to enhance field sales productivity through real-time tracking and transparent reporting. As a Full Stack Developer, I built the mobile frontend using Flutter and the backend API using Laravel, creating a seamless system for both sales agents and supervisors.
+
+The application utilizes Location-Based Service (LBS) to verify sales visits by capturing GPS coordinates during outlet check-ins, ensuring that every visit is genuine and trackable. It provides a reliable reporting system that helps eliminate fake reports and supports management in evaluating team performance with accurate, real-time data.
+
+With a clean UI and intuitive UX, the app is optimized for field usability, allowing sales agents to report quickly while giving supervisors full visibility into daily activities. The system is also scalable and can be easily integrated with other enterprise tools if needed.
+    `,
+    images: [
+      playbookSalesForce1,
+      playbookSalesForce2,
+      playbookSalesForce3,
+    ],
+    tags: ['Flutter', 'Dart', 'MySQL', 'Laravel'],
+    // liveUrl: 'https://task.joglo.ink',
+  },
+  {
+    title: 'Wage Connect',
+    shortDescription: 'Wage Connect',
+    longDescription: `Wage Connect`,
+    images: [],
+    tags: ['Vite', 'React', 'TypeScript', 'React Strap', 'MySQL', 'Node.js', 'Express.js', 'Redis', 'Prisma ORM'],
+    liveUrl: '',
+    sourceUrl: '',
+  },
+  {
+    title: 'DIGISCORE - Digital Scoring System for Martial Arts',
+    shortDescription: 'DIGISCORE - Digital Scoring System for Martial Arts',
+    longDescription: `DIGISCORE - Digital Scoring System for Martial Arts`,
+    images: [],
+    tags: ['Flutter', 'Dart', 'MySQL', 'Express.js', 'Vite.js', 'Socket.io', 'Sequelize'],
+    liveUrl: '',
+    sourceUrl: '',
+  },
+  {
+    title: 'DAFTRIX – Digital Registration & Management System',
+    shortDescription: 'DAFTRIX – Digital Registration & Management System',
+    longDescription: `DAFTRIX – Digital Registration & Management System`,
+    images: [],
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Chackra UI', 'PostgreSQL', 'Express.js', 'NextAuth', 'Sequelize'],
+    liveUrl: '',
+    sourceUrl: '',
+  },
+  {
+    title: 'Module Device (fingerspot.io)',
+    shortDescription: 'Module Device (fingerspot.io)',
+    longDescription: `Module Device (fingerspot.io)`,
+    images: [],
+    tags: ['Flutter', 'Dart', 'Express.js', 'MySQL', 'SQLite', 'TCP Connection', 'FFmpeg', 'Socket'],
+    liveUrl: '',
+    sourceUrl: '',
+  },
+  {
+    title: 'Module Chat (fingerspot.io)',
+    shortDescription: 'Module Chat (fingerspot.io)',
+    longDescription: `Module Chat (fingerspot.io)`,
+    images: [],
+    tags: ['Flutter', 'Dart', 'Express.js', 'MySQL', 'Socket.io'],
+    liveUrl: '',
+    sourceUrl: '',
+  },
+  {
+    title: 'PUSH SDK (fingerspot.io)',
+    shortDescription: 'PUSH SDK (fingerspot.io)',
+    longDescription: `PUSH SDK (fingerspot.io)`,
+    images: [],
+    tags: ['Express.js', 'MySQL', 'Socket.io'],
+    liveUrl: '',
+    sourceUrl: '',
+  },
+  {
+    title: 'STELA - DPR RI',
+    shortDescription: 'STELA - DPR RI',
+    longDescription: `STELA - DPR RI`,
+    images: [],
+    tags: ['Kotlin', 'Retrofit'],
+    liveUrl: '',
+    sourceUrl: '',
+  },
 ];
 
 const Projects = () => {
@@ -38,7 +131,7 @@ const Projects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {projectsData.map((project, index) => (
             <div
-              key={project.id}
+              key={index}
               className="bg-white border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/10 cursor-pointer"
               data-aos="fade-up"
               data-aos-delay={`${100 * (index + 1)}`}

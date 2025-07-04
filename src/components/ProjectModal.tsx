@@ -3,7 +3,6 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FaTimes } from 'react-icons/fa';
 
 export interface Project {
-  id: number;
   title: string;
   shortDescription: string;
   longDescription: string;
