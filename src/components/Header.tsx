@@ -44,7 +44,7 @@ const Header = () => {
   return (
     <>
       <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-lg border-b border-slate-200 px-4 sm:px-6 lg:px-20 py-4 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+        <a href="#" className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
           <span className="text-blue-600">Ridho's</span>
           <span>Portfolio</span>
         </a>
@@ -68,9 +68,9 @@ const Header = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-50 bg-white transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}
+        className={`fixed inset-0 z-50 bg-white flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}
       >
-        <div className="flex justify-end p-4">
+        <div className="flex justify-end p-5">
           {/* Close Button */}
           <button
             onClick={() => setIsMenuOpen(false)}
@@ -80,7 +80,7 @@ const Header = () => {
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
           </button>
         </div>
-        <nav className="flex flex-col items-center justify-center h-full space-y-8 text-xl">
+        <nav className="flex flex-1 flex-col items-center justify-center space-y-8 text-xl">
           {navLinks}
         </nav>
       </div>
