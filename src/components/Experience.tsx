@@ -68,7 +68,7 @@ const Experience = () => {
                 <>
                   <div className="w-full md:w-5/12"></div>
                   <div className="hidden md:flex w-1/12 justify-center">
-                    <div className="w-4 h-4 bg-blue-500 rounded-full z-10"></div>
+                    <div className="ml-0.5 w-4 h-4 bg-blue-500 rounded-full z-10"></div>
                   </div>
                   <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-lg border border-slate-200" data-aos="fade-left">
                     <h3 className="font-bold text-slate-900 text-xl">{exp.title}</h3>
@@ -95,7 +95,7 @@ const Experience = () => {
                     </ul>
                   </div>
                   <div className="hidden md:flex w-1/12 justify-center">
-                    <div className="w-4 h-4 bg-blue-500 rounded-full z-10"></div>
+                    <div className="ml-0.5 w-4 h-4 bg-blue-500 rounded-full z-10"></div>
                   </div>
                   <div className="w-full md:w-5/12"></div>
                 </>
