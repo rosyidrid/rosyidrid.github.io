@@ -2,8 +2,8 @@ import { useState } from 'react';
 import ProjectModal from './ProjectModal';
 import type { Project } from './ProjectModal';
 
-import taskConnect1 from '../assets/projects/task-connect/1.png';
-import taskConnect2 from '../assets/projects/task-connect/2.png';
+// import taskConnect1 from '../assets/projects/task-connect/1.png';
+// import taskConnect2 from '../assets/projects/task-connect/2.png';
 
 const projectsData: Project[] = [
   {
@@ -12,8 +12,8 @@ const projectsData: Project[] = [
     shortDescription: 'A web-based employee and task management platform that helps businesses streamline work schedules, team communication, and attendance tracking efficiently.',
     longDescription: `Task Connect is a web-based application designed to help companies and organizations manage daily operations in one centralized platform. It offers features such as shift scheduling and task assignment. With a clean, modern interface and multiple sign-in options (Google, email, phone number, and QR code), Task Connect ensures both flexibility and security for users. I developed this project from scratch, frontend and backend implementation, authentication system, and deployment. Task Connect is fully integrated with the Joglo.ink ecosystem and is used in real-world business environments that require efficiency and real-time collaboration.`,
     images: [
-      taskConnect1,
-      taskConnect2,
+      // taskConnect1,
+      // taskConnect2,
     ],
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MySQL', 'NestJS', 'NextAuth', 'JWT'],
     liveUrl: 'https://task.joglo.ink',
