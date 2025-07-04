@@ -19,11 +19,13 @@ import {
     SiNotion,
     SiJira,
     SiBitbucket,
+    SiPostman,
+    SiRedis,
 } from 'react-icons/si';
 
 const skillsData = [
-    { name: 'JavaScript', icon: <FaJsSquare className="w-12 h-12 text-yellow-500" /> },
-    { name: 'TypeScript', icon: <SiTypescript className="w-12 h-12 text-blue-400" /> },
+    { name: 'JavaScript', icon: <FaJsSquare className="w-12 h-12 text-yellow-400" /> },
+    { name: 'TypeScript', icon: <SiTypescript className="w-12 h-12 text-blue-500" /> },
     { name: 'React', icon: <FaReact className="w-12 h-12 text-cyan-400" /> },
     { name: 'Express.js', icon: <SiExpress className="w-12 h-12 text-black" /> },
     { name: 'Next.js', icon: <SiNextdotjs className="w-12 h-12 text-black" /> },
@@ -41,6 +43,8 @@ const skillsData = [
     { name: 'Notion', icon: <SiNotion className="w-12 h-12" /> },
     { name: 'Jira', icon: <SiJira className="w-12 h-12 text-blue-600" /> },
     { name: 'Bitbucket', icon: <SiBitbucket className="w-12 h-12 text-blue-600" /> },
+    { name: 'Postman', icon: <SiPostman className="w-12 h-12 text-orange-600" /> },
+    { name: 'Redis', icon: <SiRedis className="w-12 h-12 text-red-600" /> },
 ];
 
 const Skills = () => {
