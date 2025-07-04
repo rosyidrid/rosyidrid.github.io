@@ -4,6 +4,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import About from './components/About';
 import Experience from './components/Experience';
+import Skills from './components/Skills';
 import Footer from './components/Footer';
 import { useEffect } from 'react';
 import AOS from 'aos';
@@ -14,12 +15,13 @@ function App() {
     AOS.init({ duration: 1000 });
   }, []);
   return (
-    <div className="bg-slate-50 min-h-screen flex flex-col">
+    <div className="bg-slate-50 min-h-screen flex flex-col overflow-x-hidden">
       <Header />
       <main className="flex-grow">
         <Hero />
         <About />
         <Experience />
+        <Skills />
         <Projects />
         <Contact />
       </main>

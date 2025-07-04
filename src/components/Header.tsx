@@ -36,6 +36,7 @@ const Header = () => {
     <>
       <a href="#about" className="text-slate-600 hover:text-blue-600 py-2" onClick={handleLinkClick}>About</a>
       <a href="#experience" className="text-slate-600 hover:text-blue-600 py-2" onClick={handleLinkClick}>Experience</a>
+      <a href="#skills" className="text-slate-600 hover:text-blue-600 py-2" onClick={handleLinkClick}>Skills</a>
       <a href="#projects" className="text-slate-600 hover:text-blue-600 py-2" onClick={handleLinkClick}>Projects</a>
       <a href="#contact" className="text-white bg-blue-600 px-4 py-2 rounded-full" onClick={handleLinkClick}>Contact Me</a>
     </>
