@@ -1,6 +1,7 @@
 import SocialLinks from './SocialLinks';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
-// import profile from "../assets/profile.jpg";
+import profile from "../assets/profile.jpg";
+
 
 const Hero = () => {
   const [text] = useTypewriter({
@@ -42,11 +43,11 @@ const Hero = () => {
         </div>
         {/* Photo */}
         <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="400">
-          {/* <img
+          <img
             src={profile}
             alt="Profile photo"
             className="w-52 h-52 md:w-80 md:h-80 object-cover rounded-full shadow-lg shadow-blue-500/20"
-          /> */}
+          />
         </div>
       </div>
     </section>
