@@ -16,9 +16,9 @@ function App() {
     AOS.init({ duration: 1000 });
   }, []);
   return (
-    <div className="bg-slate-50 min-h-screen flex flex-col overflow-x-hidden">
+    <div className="bg-slate-50 min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow overflow-x-hidden">
         <Hero />
         <About />
         <Education />
