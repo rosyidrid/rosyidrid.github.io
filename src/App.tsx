@@ -4,6 +4,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import About from './components/About';
 import Experience from './components/Experience';
+import Education from './components/Education';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
 import { useEffect } from 'react';
@@ -20,6 +21,7 @@ function App() {
       <main className="flex-grow">
         <Hero />
         <About />
+        <Education />
         <Experience />
         <Skills />
         <Projects />
