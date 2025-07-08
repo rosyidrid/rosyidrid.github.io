@@ -19,6 +19,10 @@ import daftrix3 from '../assets/projects/daftrix/3.png';
 import daftrix4 from '../assets/projects/daftrix/4.png';
 import daftrix5 from '../assets/projects/daftrix/5.png';
 
+// digiscore
+import digiscore1 from '../assets/projects/digiscore/1.png';
+
+
 
 const projectsData: Project[] = [
   {
@@ -69,7 +73,9 @@ With a clean UI and intuitive UX, the app is optimized for field usability, allo
     title: 'DIGISCORE - Digital Scoring System for Martial Arts',
     shortDescription: 'Built a cross-platform real-time scoring system for martial arts tournaments with multi-arena and multi-category support, used in major regional and national events.',
     longDescription: `Developed a comprehensive digital scoring system for martial arts tournaments, enabling real-time synchronization between judge devices and public displays using Socket.IO. The system includes a Flutter-based mobile app for judges and a Vite.js web panel for administrators, ensuring smooth coordination across multiple arenas and categories. Features include automated match result reporting and a scalable architecture that has been successfully deployed in prominent events such as Balikpapan Open 1, Multievent Kota, and Walikota Cup.`,
-    images: [],
+    images: [
+      digiscore1,
+    ],
     tags: ['Flutter', 'Dart', 'MySQL', 'Express.js', 'Vite.js', 'Socket.io', 'Sequelize'],
     liveUrl: '',
     sourceUrl: '',
