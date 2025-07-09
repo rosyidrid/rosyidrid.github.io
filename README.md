@@ -5,7 +5,7 @@
 I am a passionate web developer with experience in building functional and engaging web applications. I am always enthusiastic about learning new technologies and improving my skills.
 
 - 📫 Contact me at: **[rosyidridho9g@gmail.com](mailto:rosyidridho9g@gmail.com)**
-- 📄 Check out my LinkedIn: **[Your LinkedIn](https://linkedin.com/in/yourusername)**
+- 📄 Check out my LinkedIn: **[Your LinkedIn](https://linkedin.com/in/rosyidrid)**
 - 🌐 Visit my portfolio: **[rosyidrid.github.io](https://rosyidrid.github.io/)**
 
 ---
