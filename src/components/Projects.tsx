@@ -21,6 +21,7 @@ import daftrix5 from '../assets/projects/daftrix/5.png';
 
 // digiscore
 import digiscore1 from '../assets/projects/digiscore/1.png';
+import digiscore2 from '../assets/projects/digiscore/2.png';
 
 const projectsData: Project[] = [
   {
@@ -56,7 +57,8 @@ With a clean UI and intuitive UX, the app is optimized for field usability, allo
       playbookSalesForce3,
     ],
     tags: ['Flutter', 'Dart', 'MySQL', 'Laravel'],
-    // liveUrl: 'https://task.joglo.ink',
+    liveUrl: '',
+    sourceUrl: '',
   },
   {
     title: 'Wage Connect',
@@ -73,6 +75,7 @@ With a clean UI and intuitive UX, the app is optimized for field usability, allo
     longDescription: `Developed a comprehensive digital scoring system for martial arts tournaments, enabling real-time synchronization between judge devices and public displays using Socket.IO. The system includes a Flutter-based mobile app for judges and a Vite.js web panel for administrators, ensuring smooth coordination across multiple arenas and categories. Features include automated match result reporting and a scalable architecture that has been successfully deployed in prominent events such as Balikpapan Open 1, Multievent Kota, and Walikota Cup.`,
     images: [
       digiscore1,
+      digiscore2,
     ],
     tags: ['Flutter', 'Dart', 'MySQL', 'Express.js', 'Vite.js', 'Socket.io', 'Sequelize'],
     liveUrl: '',
