@@ -1,69 +1,91 @@
-# React + TypeScript + Vite
+# My Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Selamat datang di repositori portofolio pribadi saya! Proyek ini dibangun untuk menampilkan keahlian, proyek, dan perjalanan saya sebagai seorang pengembang web. Dibuat dengan teknologi modern agar cepat, responsif, dan menarik secara visual.
 
-Currently, two official plugins are available:
+[![Portfolio Screenshot](https://via.placeholder.com/800x400.png?text=Ganti+dengan+Screenshot+Website+Anda)](https://rosyidrid.github.io/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**[➡️ Kunjungi Live Demo ⬅️](https://rosyidrid.github.io/)**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Fitur Utama
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Desain Modern & Responsif**: Tampilan yang bersih dan dapat diakses di semua perangkat, dari ponsel hingga desktop.
+- **Animasi Halus**: Animasi saat scroll (AOS) untuk memberikan pengalaman pengguna yang lebih dinamis.
+- **Efek Mengetik**: Menggunakan `react-simple-typewriter` untuk menampilkan teks perkenalan yang menarik.
+- **Galeri Proyek**: Showcase proyek dengan `react-responsive-carousel` yang interaktif.
+- **Dibangun dengan Alat Modern**: Mengoptimalkan pengembangan dengan Vite untuk kecepatan dan efisiensi.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 👨‍💻 Tentang Saya
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Saya adalah seorang pengembang web yang bersemangat dengan pengalaman dalam membangun aplikasi web yang fungsional dan menarik. Saya selalu antusias untuk mempelajari teknologi baru dan meningkatkan keahlian saya.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+*   📫 Hubungi saya di: **[emailanda@example.com](mailto:emailanda@example.com)**
+*   📄 Lihat profil LinkedIn saya: **[LinkedIn Anda](https.linkedin.com/in/usernameanda)**
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 💡 Keahlian & Teknologi
+
+Berikut adalah beberapa teknologi dan alat yang saya kuasai:
+
+**Frontend:**
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+**Tools & Lainnya:**
+
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+
+---
+
+## 🛠️ Teknologi yang Digunakan dalam Proyek Ini
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
+
+---
+
+## 🚀 Instalasi & Menjalankan Proyek
+
+Ingin menjalankan proyek ini di komputer Anda? Ikuti langkah-langkah berikut:
+
+1.  **Clone repositori ini:**
+    ```bash
+    git clone https://github.com/rosyidrid/rosyidrid.github.io.git
+    ```
+
+2.  **Masuk ke direktori proyek:**
+    ```bash
+    cd rosyidrid.github.io
+    ```
+
+3.  **Install semua dependency yang dibutuhkan:**
+    ```bash
+    npm install
+    ```
+
+4.  **Jalankan development server:**
+    ```bash
+    npm run dev
+    ```
+    Buka [http://localhost:5173](http://localhost:5173) (atau port lain yang muncul di terminal) di browser Anda.
+
+---
+
+## 🌐 Deployment
+
+Proyek ini di-deploy secara otomatis ke [GitHub Pages](https://pages.github.com/) setiap kali ada perubahan yang di-push ke branch `main`.

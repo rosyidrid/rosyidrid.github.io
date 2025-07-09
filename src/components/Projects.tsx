@@ -22,8 +22,6 @@ import daftrix5 from '../assets/projects/daftrix/5.png';
 // digiscore
 import digiscore1 from '../assets/projects/digiscore/1.png';
 
-
-
 const projectsData: Project[] = [
   {
     title: 'Task Connect',
