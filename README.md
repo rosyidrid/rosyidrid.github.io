@@ -1,91 +1,33 @@
-# My Personal Portfolio
-
-Selamat datang di repositori portofolio pribadi saya! Proyek ini dibangun untuk menampilkan keahlian, proyek, dan perjalanan saya sebagai seorang pengembang web. Dibuat dengan teknologi modern agar cepat, responsif, dan menarik secara visual.
-
-[![Portfolio Screenshot](https://via.placeholder.com/800x400.png?text=Ganti+dengan+Screenshot+Website+Anda)](https://rosyidrid.github.io/)
-
-**[➡️ Kunjungi Live Demo ⬅️](https://rosyidrid.github.io/)**
-
----
-
-## ✨ Fitur Utama
-
-- **Desain Modern & Responsif**: Tampilan yang bersih dan dapat diakses di semua perangkat, dari ponsel hingga desktop.
-- **Animasi Halus**: Animasi saat scroll (AOS) untuk memberikan pengalaman pengguna yang lebih dinamis.
-- **Efek Mengetik**: Menggunakan `react-simple-typewriter` untuk menampilkan teks perkenalan yang menarik.
-- **Galeri Proyek**: Showcase proyek dengan `react-responsive-carousel` yang interaktif.
-- **Dibangun dengan Alat Modern**: Mengoptimalkan pengembangan dengan Vite untuk kecepatan dan efisiensi.
-
----
+# Hi there, I'm [Nama Anda] 👋
 
 ## 👨‍💻 Tentang Saya
 
 Saya adalah seorang pengembang web yang bersemangat dengan pengalaman dalam membangun aplikasi web yang fungsional dan menarik. Saya selalu antusias untuk mempelajari teknologi baru dan meningkatkan keahlian saya.
 
 *   📫 Hubungi saya di: **[emailanda@example.com](mailto:emailanda@example.com)**
-*   📄 Lihat profil LinkedIn saya: **[LinkedIn Anda](https.linkedin.com/in/usernameanda)**
+*   📄 Lihat profil LinkedIn saya: **[LinkedIn Anda](https://linkedin.com/in/usernameanda)**
+*   🌐 Kunjungi portofolio saya: **[rosyidrid.github.io](https://rosyidrid.github.io/)**
 
 ---
 
 ## 💡 Keahlian & Teknologi
 
-Berikut adalah beberapa teknologi dan alat yang saya kuasai:
+Berikut adalah beberapa teknologi dan alat yang saya kuasai, dikelompokkan berdasarkan kategori:
 
-**Frontend:**
+### Bahasa Pemrograman
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white) ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white) ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+### Frontend
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-**Tools & Lainnya:**
+### Backend
+![NodeJS](https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white) ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)
 
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
-![NPM](https://img.shields.io/badge/NPM-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+### Mobile
+![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white) ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)
 
----
+### Database
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/postgresql-316192?style=for-the-badge&logo=postgresql&logoColor=white) ![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
 
-## 🛠️ Teknologi yang Digunakan dalam Proyek Ini
-
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
-
----
-
-## 🚀 Instalasi & Menjalankan Proyek
-
-Ingin menjalankan proyek ini di komputer Anda? Ikuti langkah-langkah berikut:
-
-1.  **Clone repositori ini:**
-    ```bash
-    git clone https://github.com/rosyidrid/rosyidrid.github.io.git
-    ```
-
-2.  **Masuk ke direktori proyek:**
-    ```bash
-    cd rosyidrid.github.io
-    ```
-
-3.  **Install semua dependency yang dibutuhkan:**
-    ```bash
-    npm install
-    ```
-
-4.  **Jalankan development server:**
-    ```bash
-    npm run dev
-    ```
-    Buka [http://localhost:5173](http://localhost:5173) (atau port lain yang muncul di terminal) di browser Anda.
-
----
-
-## 🌐 Deployment
-
-Proyek ini di-deploy secara otomatis ke [GitHub Pages](https://pages.github.com/) setiap kali ada perubahan yang di-push ke branch `main`.
+### Tools & Platform
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white) ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white) ![Jira](https://img.shields.io/badge/jira-%230052CC.svg?style=for-the-badge&logo=jira&logoColor=white) ![Bitbucket](https://img.shields.io/badge/bitbucket-%230047A0.svg?style=for-the-badge&logo=bitbucket&logoColor=white)
