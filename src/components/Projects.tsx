@@ -3,9 +3,9 @@ import ProjectModal from './ProjectModal';
 import type { Project } from './ProjectModal';
 
 // task connect
-import taskConnect1 from '../assets/projects/task-connect/1.png';
-import taskConnect2 from '../assets/projects/task-connect/2.png';
-import taskConnect3 from '../assets/projects/task-connect/3.jpg';
+// import taskConnect1 from '../assets/projects/task-connect/1.png';
+// import taskConnect2 from '../assets/projects/task-connect/2.png';
+// import taskConnect3 from '../assets/projects/task-connect/3.jpg';
 
 // playbook sales force
 import playbookSalesForce1 from '../assets/projects/playbook/1.png';
@@ -24,23 +24,23 @@ import digiscore1 from '../assets/projects/digiscore/1.png';
 import digiscore2 from '../assets/projects/digiscore/2.png';
 
 const projectsData: Project[] = [
-  {
-    title: 'Task Connect',
-    shortDescription: 'A web-based employee and task management platform that helps businesses streamline work schedules, team communication, and attendance tracking efficiently.',
-    longDescription: `
-Task Connect is a web-based application designed to help companies and organizations manage daily operations in one centralized platform. 
-    
-It offers features such as shift scheduling and task assignment. With a clean, modern interface and multiple sign-in options (Google, email, phone number, and QR code), Task Connect ensures both flexibility and security for users. 
-    
-I developed and maintained this project, frontend and backend implementation, authentication system, and deployment. Task Connect is fully integrated with the Joglo.ink ecosystem and is used in real-world business environments that require efficiency and real-time collaboration.`,
-    images: [
-      taskConnect1,
-      taskConnect2,
-      taskConnect3,
-    ],
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MySQL', 'NestJS', 'NextAuth', 'JWT', 'Prisma ORM', 'React Native'],
-    liveUrl: 'https://task.joglo.ink',
-  },
+  //   {
+  //     title: 'Task Connect',
+  //     shortDescription: 'A web-based employee and task management platform that helps businesses streamline work schedules, team communication, and attendance tracking efficiently.',
+  //     longDescription: `
+  // Task Connect is a web-based application designed to help companies and organizations manage daily operations in one centralized platform. 
+
+  // It offers features such as shift scheduling and task assignment. With a clean, modern interface and multiple sign-in options (Google, email, phone number, and QR code), Task Connect ensures both flexibility and security for users. 
+
+  // I developed and maintained this project, frontend and backend implementation, authentication system, and deployment. Task Connect is fully integrated with the Joglo.ink ecosystem and is used in real-world business environments that require efficiency and real-time collaboration.`,
+  //     images: [
+  //       taskConnect1,
+  //       taskConnect2,
+  //       taskConnect3,
+  //     ],
+  //     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MySQL', 'NestJS', 'NextAuth', 'JWT', 'Prisma ORM', 'React Native'],
+  //     liveUrl: 'https://task.joglo.ink',
+  //   },
   {
     title: 'Playbook Sales Force',
     shortDescription: 'A mobile and web-based sales tracking app built with Flutter and Laravel, designed to monitor real-time sales visits, prevent fraudulent reporting, and improve overall team productivity.',
@@ -60,15 +60,15 @@ With a clean UI and intuitive UX, the app is optimized for field usability, allo
     liveUrl: '',
     sourceUrl: '',
   },
-  {
-    title: 'Wage Connect',
-    shortDescription: 'Wage Connect',
-    longDescription: `Wage Connect`,
-    images: [],
-    tags: ['Vite', 'React', 'TypeScript', 'React Strap', 'MySQL', 'Node.js', 'Express.js', 'Redis', 'Prisma ORM'],
-    liveUrl: '',
-    sourceUrl: '',
-  },
+  // {
+  //   title: 'Wage Connect',
+  //   shortDescription: 'Wage Connect',
+  //   longDescription: `Wage Connect`,
+  //   images: [],
+  //   tags: ['Vite', 'React', 'TypeScript', 'React Strap', 'MySQL', 'Node.js', 'Express.js', 'Redis', 'Prisma ORM'],
+  //   liveUrl: '',
+  //   sourceUrl: '',
+  // },
   {
     title: 'DIGISCORE - Digital Scoring System for Martial Arts',
     shortDescription: 'Built a cross-platform real-time scoring system for martial arts tournaments with multi-arena and multi-category support, used in major regional and national events.',
@@ -96,42 +96,42 @@ With a clean UI and intuitive UX, the app is optimized for field usability, allo
     liveUrl: 'https://pendaftarans.com',
     sourceUrl: '',
   },
-  {
-    title: 'Module Device (fingerspot.io)',
-    shortDescription: 'Module Device (fingerspot.io)',
-    longDescription: `Module Device (fingerspot.io)`,
-    images: [],
-    tags: ['Flutter', 'Dart', 'Express.js', 'MySQL', 'SQLite', 'TCP Connection', 'FFmpeg', 'Socket'],
-    liveUrl: '',
-    sourceUrl: '',
-  },
-  {
-    title: 'Module Chat (fingerspot.io)',
-    shortDescription: 'Module Chat (fingerspot.io)',
-    longDescription: `Module Chat (fingerspot.io)`,
-    images: [],
-    tags: ['Flutter', 'Dart', 'Express.js', 'MySQL', 'Socket.io'],
-    liveUrl: '',
-    sourceUrl: '',
-  },
-  {
-    title: 'PUSH SDK (fingerspot.io)',
-    shortDescription: 'PUSH SDK (fingerspot.io)',
-    longDescription: `PUSH SDK (fingerspot.io)`,
-    images: [],
-    tags: ['Express.js', 'MySQL', 'Socket.io'],
-    liveUrl: '',
-    sourceUrl: '',
-  },
-  {
-    title: 'STELA - DPR RI',
-    shortDescription: 'STELA - DPR RI',
-    longDescription: `STELA - DPR RI`,
-    images: [],
-    tags: ['Kotlin', 'Retrofit'],
-    liveUrl: '',
-    sourceUrl: '',
-  },
+  // {
+  //   title: 'Module Device (fingerspot.io)',
+  //   shortDescription: 'Module Device (fingerspot.io)',
+  //   longDescription: `Module Device (fingerspot.io)`,
+  //   images: [],
+  //   tags: ['Flutter', 'Dart', 'Express.js', 'MySQL', 'SQLite', 'TCP Connection', 'FFmpeg', 'Socket'],
+  //   liveUrl: '',
+  //   sourceUrl: '',
+  // },
+  // {
+  //   title: 'Module Chat (fingerspot.io)',
+  //   shortDescription: 'Module Chat (fingerspot.io)',
+  //   longDescription: `Module Chat (fingerspot.io)`,
+  //   images: [],
+  //   tags: ['Flutter', 'Dart', 'Express.js', 'MySQL', 'Socket.io'],
+  //   liveUrl: '',
+  //   sourceUrl: '',
+  // },
+  // {
+  //   title: 'PUSH SDK (fingerspot.io)',
+  //   shortDescription: 'PUSH SDK (fingerspot.io)',
+  //   longDescription: `PUSH SDK (fingerspot.io)`,
+  //   images: [],
+  //   tags: ['Express.js', 'MySQL', 'Socket.io'],
+  //   liveUrl: '',
+  //   sourceUrl: '',
+  // },
+  // {
+  //   title: 'STELA - DPR RI',
+  //   shortDescription: 'STELA - DPR RI',
+  //   longDescription: `STELA - DPR RI`,
+  //   images: [],
+  //   tags: ['Kotlin', 'Retrofit'],
+  //   liveUrl: '',
+  //   sourceUrl: '',
+  // },
 ];
 
 const Projects = () => {
