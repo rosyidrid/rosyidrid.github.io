@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
@@ -45,7 +46,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200 px-4 sm:px-6 lg:px-20 py-4 flex justify-between items-center dark:bg-slate-900/80 dark:border-slate-800">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200 px-4 sm:px-6 lg:px-20 py-4 flex justify-between items-center dark:bg-slate-900/80 dark:border-slate-800 transition-colors duration-300 ease-in-out">
         <a href="#" className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
           <span className="text-blue-600">Ridho's</span>
           <span className="dark:text-slate-100">Portfolio</span>
@@ -57,9 +58,14 @@ const Header = () => {
         </nav>
 
         {/* Theme Toggle */}
-        <div className="hidden md:flex items-center gap-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="hidden md:flex items-center gap-6"
+        >
           <ThemeToggle />
-        </div>
+        </motion.div>
 
         {/* Burger Button */}
         <div className="md:hidden">
@@ -88,6 +94,9 @@ const Header = () => {
           </button>
         </div>
         <nav className="flex flex-1 flex-col items-center justify-center space-y-8 text-lg">
+          <div className="flex items-center justify-center">
+            <ThemeToggle />
+          </div>
           {navLinks}
         </nav>
       </div>
