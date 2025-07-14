@@ -17,15 +17,15 @@ const Hero = () => {
     <section className="py-20">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
         <div className="flex-1 text-center md:text-left">
-          <div className="inline-block bg-white/50 backdrop-blur-md border border-slate-200/80 shadow-lg shadow-black/5 rounded-full px-4 py-2 mb-4" data-aos="fade-up">
-            <p className="text-sm font-medium text-slate-700 tracking-wide">
+          <div className="inline-block bg-white/50 backdrop-blur-md border border-slate-200/80 shadow-lg shadow-black/5 rounded-full px-4 py-2 mb-4 bg-white dark:bg-slate-900 dark:border-slate-400 dark:text-slate-100 dark:shadow-slate-600" data-aos="fade-up">
+            <p className="text-sm font-medium text-slate-700 tracking-wide dark:text-slate-100">
               Full Stack Developer | Flutter Developer
             </p>
           </div>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight" data-aos="fade-up" data-aos-delay="100">
+          <h2 className="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight dark:text-slate-100" data-aos="fade-up" data-aos-delay="100">
             Hi there, I'm <span className="text-blue-600">Ridho</span> 👋🏻
           </h2>
-          <p className="text-xl text-slate-600 mt-6 max-w-xl h-20" data-aos="fade-up" data-aos-delay="200">
+          <p className="text-xl text-slate-600 mt-6 max-w-xl h-20 dark:text-slate-100" data-aos="fade-up" data-aos-delay="200">
             <span>{text}</span>
             <Cursor />
           </p>

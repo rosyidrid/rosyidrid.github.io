@@ -60,10 +60,10 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20" data-aos="fade-up">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-slate-900 mb-8">My Work <span className="text-blue-600">Journey</span></h2>
+        <h2 className="text-4xl font-bold text-center text-slate-900 mb-8 dark:text-slate-100">My Work <span className="text-blue-600">Journey</span></h2>
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-1/2 w-0.5 h-full bg-slate-300 hidden md:block" aria-hidden="true"></div>
+          <div className="absolute left-1/2 w-0.5 h-full bg-slate-300 hidden md:block dark:bg-slate-600" aria-hidden="true"></div>
 
           {experiences.map((exp, index) => (
             <div key={index} className="mb-8 flex md:justify-between items-center w-full flex-col md:flex-row">
@@ -74,16 +74,16 @@ const Experience = () => {
                   <div className="hidden md:flex w-1/12 justify-center">
                     <div className="ml-0.5 w-4 h-4 bg-blue-500 rounded-full z-10"></div>
                   </div>
-                  <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-lg border border-slate-200" data-aos="fade-left">
-                    <h3 className="font-bold text-slate-900 text-xl">{exp.title}</h3>
-                    <p className="text-sm font-semibold text-blue-600">{exp.company}</p>
-                    <p className="text-sm text-gray-500 mb-3">{exp.period}</p>
+                  <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-lg border border-slate-200 dark:bg-slate-800" data-aos="fade-left">
+                    <h3 className="font-bold text-slate-900 text-xl dark:text-slate-100">{exp.title}</h3>
+                    <p className="text-sm font-semibold text-blue-600 dark:text-blue-400">{exp.company}</p>
+                    <p className="text-sm text-gray-500 mb-3 dark:text-gray-400">{exp.period}</p>
                     <div className="flex flex-wrap gap-2 mb-3">
                       {exp.skills.map((skill, i) => (
-                        <span key={i} className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">{skill}</span>
+                        <span key={i} className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full dark:text-slate-100 dark:bg-blue-600">{skill}</span>
                       ))}
                     </div>
-                    <ul className="list-disc list-inside text-slate-600 space-y-1 text-sm">
+                    <ul className="list-disc list-inside text-slate-600 space-y-1 text-sm dark:text-slate-400">
                       {exp.description.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
@@ -93,16 +93,16 @@ const Experience = () => {
               ) : (
                 // Content for left side
                 <>
-                  <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-lg border border-slate-200" data-aos="fade-right">
-                    <h3 className="font-bold text-slate-900 text-xl">{exp.title}</h3>
-                    <p className="text-sm font-semibold text-blue-600">{exp.company}</p>
-                    <p className="text-sm text-gray-500 mb-3">{exp.period}</p>
+                  <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-lg border border-slate-200 dark:bg-slate-800" data-aos="fade-right">
+                    <h3 className="font-bold text-slate-900 text-xl dark:text-slate-100">{exp.title}</h3>
+                    <p className="text-sm font-semibold text-blue-600 dark:text-blue-400">{exp.company}</p>
+                    <p className="text-sm text-gray-500 mb-3 dark:text-gray-400">{exp.period}</p>
                     <div className="flex flex-wrap gap-2 mb-3">
                       {exp.skills.map((skill, i) => (
-                        <span key={i} className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">{skill}</span>
+                        <span key={i} className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full dark:text-slate-100 dark:bg-blue-600">{skill}</span>
                       ))}
                     </div>
-                    <ul className="list-disc list-inside text-slate-600 space-y-1 text-sm">
+                    <ul className="list-disc list-inside text-slate-600 space-y-1 text-sm dark:text-slate-400">
                       {exp.description.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}

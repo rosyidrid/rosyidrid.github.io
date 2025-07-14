@@ -10,25 +10,28 @@ import Footer from './components/Footer';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
   return (
-    <div className="bg-slate-50 min-h-screen flex flex-col relative">
-      <Header />
-      <div className="flex-grow flex flex-col pt-16">
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Education />
-        <Projects />
-        <Contact />
+    <ThemeProvider>
+      <div className="min-h-screen flex flex-col relative bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100">
+        <Header />
+        <div className="flex-grow flex flex-col pt-16">
+          <Hero />
+          <About />
+          <Skills />
+          <Experience />
+          <Education />
+          <Projects />
+          <Contact />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </ThemeProvider>
   );
 }
 

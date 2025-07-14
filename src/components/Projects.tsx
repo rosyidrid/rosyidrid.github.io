@@ -148,20 +148,20 @@ const Projects = () => {
   return (
     <>
       <section id="projects" className="py-20 px-4" data-aos="fade-up">
-        <h2 className="text-4xl font-bold text-center text-slate-900 mb-10">My <span className="text-blue-600">Projects</span></h2>
+        <h2 className="text-4xl font-bold text-center text-slate-900 mb-10 dark:text-slate-100">My <span className="text-blue-600">Projects</span></h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {projectsData.map((project, index) => (
             <div
               key={index}
-              className="bg-white border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/10 cursor-pointer"
+              className="dark:bg-slate-800 bg-white border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/10 cursor-pointer"
               data-aos="fade-up"
               data-aos-delay={`${100 * (index + 1)}`}
               onClick={() => handleOpenModal(project)}
             >
               <img src={project.images[0]} alt={project.title} className="w-full h-48 object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">{project.title}</h3>
-                <p className="text-slate-600 mb-4 text-sm">{project.shortDescription}</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2 dark:text-slate-100">{project.title}</h3>
+                <p className="text-slate-600 mb-4 text-sm dark:text-slate-400">{project.shortDescription}</p>
                 <button
                   className="text-blue-600 font-semibold hover:underline text-sm"
                 >

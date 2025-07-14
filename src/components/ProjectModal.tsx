@@ -30,11 +30,11 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
       />
       {/* Modal Content */}
       <div
-        className="flex justify-center items-center min-h-screen p-4"
+        className="flex justify-center items-center min-h-screen p-4 "
         style={{ pointerEvents: 'none' }}
       >
         <div
-          className="bg-white rounded-lg overflow-hidden shadow-xl max-w-3xl w-full relative transform transition-all"
+          className="bg-white rounded-lg overflow-hidden shadow-xl max-w-3xl w-full relative transform transition-all dark:bg-slate-800"
           onClick={e => e.stopPropagation()}
           data-aos="zoom-in"
           style={{ pointerEvents: 'auto' }}
@@ -57,23 +57,23 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </Carousel>
 
             <div className="p-6 md:p-8">
-              <h2 className="text-3xl font-bold text-slate-900 mb-2">{project.title}</h2>
+              <h2 className="text-3xl font-bold text-slate-900 mb-2 dark:text-slate-100">{project.title}</h2>
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                  <span key={tag} className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full dark:bg-blue-600 dark:text-slate-100">
                     {tag}
                   </span>
                 ))}
               </div>
-              <p className="text-slate-600 leading-relaxed whitespace-pre-wrap">{project.longDescription}</p>
+              <p className="text-slate-600 leading-relaxed whitespace-pre-wrap dark:text-slate-400">{project.longDescription}</p>
               <div className="mt-6 flex gap-4">
                 {project.liveUrl && (
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-700 transition-colors">
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-700 transition-colors dark:bg-blue-600 dark:text-slate-100">
                     View Live
                   </a>
                 )}
                 {project.sourceUrl && (
-                  <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-block bg-slate-200 text-slate-800 font-bold py-2 px-6 rounded-full hover:bg-slate-300 transition-colors">
+                  <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-block bg-slate-200 text-slate-800 font-bold py-2 px-6 rounded-full hover:bg-slate-300 transition-colors dark:bg-slate-600 dark:text-slate-100">
                     Source Code
                   </a>
                 )}

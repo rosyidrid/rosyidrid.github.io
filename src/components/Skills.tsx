@@ -88,25 +88,25 @@ const Skills = () => {
     return (
         <section id="skills" className="py-20 px-4">
             <div className="max-w-6xl mx-auto">
-                <h2 className="text-4xl font-bold text-center text-slate-900 mb-12">
+                <h2 className="text-4xl font-bold text-center text-slate-900 mb-12 dark:text-slate-100">
                     My <span className="text-blue-600">Skills</span>
                 </h2>
 
                 {skillsByCategory.map((category, categoryIndex) => (
                     <div key={categoryIndex} className="mb-12" data-aos="fade-up">
-                        <h3 className="text-2xl font-semibold text-slate-800 mb-6 border-b-2 border-blue-100 pb-2">
+                        <h3 className="text-2xl font-semibold text-slate-800 mb-6 border-b-2 border-blue-100 pb-2 dark:text-slate-400">
                             {category.category}
                         </h3>
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                             {category.skills.map((skill, skillIndex) => (
                                 <div
                                     key={skillIndex}
-                                    className="bg-slate-50 border border-slate-200/80 rounded-lg p-4 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-lg hover:scale-105 hover:shadow-blue-500/10 h-full"
+                                    className="bg-slate-50 dark:bg-slate-800 border border-slate-200/80 rounded-lg p-4 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-lg hover:scale-105 hover:shadow-blue-500/10 dark:border-slate-400 dark:hover:shadow-blue-500/10 h-full"
                                     data-aos="fade-up"
                                     data-aos-delay={`${50 * (skillIndex % 3)}`}
                                 >
                                     {skill.icon}
-                                    <p className="mt-3 text-sm font-medium text-slate-700">{skill.name}</p>
+                                    <p className="mt-3 text-sm font-medium text-slate-700 dark:text-slate-400">{skill.name}</p>
                                 </div>
                             ))}
                         </div>
