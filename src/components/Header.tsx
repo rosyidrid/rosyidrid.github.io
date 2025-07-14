@@ -36,8 +36,8 @@ const Header = () => {
   const navLinks = (
     <>
       <a href="#about" className="text-slate-600 hover:text-blue-600 py-2 dark:text-slate-400" onClick={handleLinkClick}>About</a>
-      <a href="#experience" className="text-slate-600 hover:text-blue-600 py-2 dark:text-slate-400" onClick={handleLinkClick}>Experience</a>
       <a href="#skills" className="text-slate-600 hover:text-blue-600 py-2 dark:text-slate-400" onClick={handleLinkClick}>Skills</a>
+      <a href="#experience" className="text-slate-600 hover:text-blue-600 py-2 dark:text-slate-400" onClick={handleLinkClick}>Experience</a>
       <a href="#projects" className="text-slate-600 hover:text-blue-600 py-2 dark:text-slate-400" onClick={handleLinkClick}>Projects</a>
       <a href="#contact" className="text-white bg-blue-600 px-4 py-2 rounded-full dark:bg-blue-500 dark:text-slate-900" onClick={handleLinkClick}>Contact Me</a>
     </>
@@ -68,26 +68,26 @@ const Header = () => {
             className="text-slate-900 focus:outline-none"
             aria-label="Open menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <svg className="w-6 h-6 dark:text-slate-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
           </button>
         </div>
       </header>
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-50 bg-white flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}
+        className={`fixed inset-0 z-50 bg-white flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden dark:bg-slate-900`}
       >
         <div className="flex justify-end p-5">
           {/* Close Button */}
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="text-slate-900 focus:outline-none"
+            className="text-slate-900 focus:outline-none dark:text-slate-100"
             aria-label="Close menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
           </button>
         </div>
-        <nav className="flex flex-1 flex-col items-center justify-center space-y-8 text-xl">
+        <nav className="flex flex-1 flex-col items-center justify-center space-y-8 text-lg">
           {navLinks}
         </nav>
       </div>
