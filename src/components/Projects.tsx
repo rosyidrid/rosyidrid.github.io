@@ -72,7 +72,7 @@ With a clean UI and intuitive UX, the app is optimized for field usability, allo
   {
     title: 'DIGISCORE - Digital Scoring System for Martial Arts',
     shortDescription: 'Built a cross-platform real-time scoring system for martial arts tournaments with multi-arena and multi-category support, used in major regional and national events.',
-    longDescription: `Developed a comprehensive digital scoring system for martial arts tournaments, enabling real-time synchronization between judge devices and public displays using Socket.IO. The system includes a Flutter-based mobile app for judges and a Vite.js web panel for administrators, ensuring smooth coordination across multiple arenas and categories. Features include automated match result reporting and a scalable architecture that has been successfully deployed in prominent events such as Balikpapan Open 1, Multievent Kota, and Walikota Cup.`,
+    longDescription: `Developed a comprehensive digital scoring system for martial arts tournaments, enabling real-time synchronization between judge devices and public displays using Socket.IO. The system includes a Flutter-based mobile app for judges and a Vite.js web panel for administrators, ensuring smooth coordination across multiple arenas and categories. Features include automated match result reporting and a scalable architecture that has been successfully deployed in prominent events such as Balikpapan Open 1, Multievent Kota, Walikota Cup (Balikpapan) 2025 and Military Tournament VI/MLW 2025.`,
     images: [
       digiscore1,
       digiscore2,
@@ -84,7 +84,7 @@ With a clean UI and intuitive UX, the app is optimized for field usability, allo
   {
     title: 'DAFTRIX – Digital Registration & Management System',
     shortDescription: 'Created a web-based registration platform for martial arts tournaments with auto-grouping, admin dashboard, and DIGISCORE integration.',
-    longDescription: `Developed a web-based registration system tailored for martial arts tournaments, featuring participant data management, verification workflow, and automatic grouping by category. The frontend was built with Next.js for a fast and responsive user experience, while the backend used Express.js for reliable and scalable services. Included an intuitive admin dashboard with printable participant reports to streamline event operations. Fully integrated with DIGISCORE to ensure a seamless experience across the tournament's digital ecosystem. Successfully deployed in events such as the Walikota Cup.`,
+    longDescription: `Developed a web-based registration system tailored for martial arts tournaments, featuring participant data management, verification workflow, and automatic grouping by category. The frontend was built with Next.js for a fast and responsive user experience, while the backend used Express.js for reliable and scalable services. Included an intuitive admin dashboard with printable participant reports to streamline event operations. Fully integrated with DIGISCORE to ensure a seamless experience across the tournament's digital ecosystem. Successfully deployed in events such as the Walikota Cup (Balikpapan) 2024 and Military Tournament VI/MLW 2025.`,
     images: [
       daftrix1,
       daftrix2,

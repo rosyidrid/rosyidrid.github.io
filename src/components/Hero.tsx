@@ -23,7 +23,7 @@ const Hero = () => {
             </p>
           </div>
           <h2 className="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight" data-aos="fade-up" data-aos-delay="100">
-            Hi, I'm <span className="text-blue-600">Ridho</span> 👋🏻
+            Hi there, I'm <span className="text-blue-600">Ridho</span> 👋🏻
           </h2>
           <p className="text-xl text-slate-600 mt-6 max-w-xl h-20" data-aos="fade-up" data-aos-delay="200">
             <span>{text}</span>
