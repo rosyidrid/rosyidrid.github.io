@@ -86,7 +86,7 @@ const skillsByCategory = [
 
 const Skills = () => {
     return (
-        <section id="skills" className="py-20 px-4 bg-white">
+        <section id="skills" className="py-20 px-4">
             <div className="max-w-6xl mx-auto">
                 <h2 className="text-4xl font-bold text-center text-slate-900 mb-12">
                     My <span className="text-blue-600">Skills</span>

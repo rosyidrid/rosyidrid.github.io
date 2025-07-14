@@ -14,7 +14,7 @@ const educations = [
 
 const Education = () => {
     return (
-        <section id="education" className="py-20 bg-gray-50" data-aos="fade-up">
+        <section id="education" className="py-20" data-aos="fade-up">
             <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-bold text-center text-slate-900 mb-12">My <span className="text-blue-600">Education</span></h2>
                 <div className="max-w-4xl mx-auto">

@@ -3,6 +3,7 @@ const experiences = [
     title: "Full Stack Developer",
     company: "Fingerspot",
     period: "January 2024 – Present",
+    skills: ["Flutter", "GetX", "Express.js", "Laravel", "Next.js", "NestJS", "React.js", "Dart"],
     description: [
       "Developed WebView-based features for the fingerspot.io app (Device & Chat modules) using Flutter, applying MVC architecture and GetX state management.",
       "Designed and maintained backend services for the Device module using Dart, ensuring stable and efficient mobile integration.",
@@ -18,6 +19,7 @@ const experiences = [
     title: "Mobile Programmer",
     company: "PT. Tumbuh Teknologi Finansial",
     period: "June 2023 (1 Week)",
+    skills: ["Flutter", "WebView", "API Integration"],
     description: [
       "Developed WebView interfaces for a peer-to-peer lending app, ensuring responsiveness and device compatibility.",
       "Integrated WebView with Flutter and backend APIs to enable reliable two-way communication.",
@@ -30,6 +32,7 @@ const experiences = [
     title: "Mobile Programmer",
     company: "Sekretariat Jenderal Dewan Perwakilan Rakyat Republik Indonesia (DPR RI)",
     period: "August 2022 – December 2022",
+    skills: ["Kotlin", "Android Studio", "Retrofit", "Zend Framework"],
     description: [
       "Explored DPR RI’s IT operations including Command Center management, help desk systems, network infrastructure, and e-Government platforms like RITIK and SPBE.",
       "Contributed to the capstone project using Zend Framework for backend and Retrofit for Android API integration.",
@@ -42,6 +45,7 @@ const experiences = [
     title: "Mobile Programmer",
     company: "PT. Rupi Digital Indonesia",
     period: "July 2021 – May 2022",
+    skills: ["Flutter", "MVVM", "Provider", "Laravel", "RESTful APIs"],
     description: [
       "Developed the Playbook Sales Force mobile app using Flutter to monitor sales activity.",
       "Applied the MVVM architecture to maintain structured separation between business logic and UI.",
@@ -74,6 +78,11 @@ const Experience = () => {
                     <h3 className="font-bold text-slate-900 text-xl">{exp.title}</h3>
                     <p className="text-sm font-semibold text-blue-600">{exp.company}</p>
                     <p className="text-sm text-gray-500 mb-3">{exp.period}</p>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {exp.skills.map((skill, i) => (
+                        <span key={i} className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">{skill}</span>
+                      ))}
+                    </div>
                     <ul className="list-disc list-inside text-slate-600 space-y-1 text-sm">
                       {exp.description.map((item, i) => (
                         <li key={i}>{item}</li>
@@ -88,6 +97,11 @@ const Experience = () => {
                     <h3 className="font-bold text-slate-900 text-xl">{exp.title}</h3>
                     <p className="text-sm font-semibold text-blue-600">{exp.company}</p>
                     <p className="text-sm text-gray-500 mb-3">{exp.period}</p>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {exp.skills.map((skill, i) => (
+                        <span key={i} className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">{skill}</span>
+                      ))}
+                    </div>
                     <ul className="list-disc list-inside text-slate-600 space-y-1 text-sm">
                       {exp.description.map((item, i) => (
                         <li key={i}>{item}</li>
