@@ -55,17 +55,17 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 justify-center items-center">
           {navLinks}
+          {/* Theme Toggle */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            className="hidden md:flex items-center gap-6"
+          >
+            <ThemeToggle />
+          </motion.div>
         </nav>
 
-        {/* Theme Toggle */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
-          className="hidden md:flex items-center gap-6"
-        >
-          <ThemeToggle />
-        </motion.div>
 
         {/* Burger Button */}
         <div className="md:hidden">
