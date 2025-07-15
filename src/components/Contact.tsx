@@ -16,7 +16,7 @@ const Contact = () => {
               type="text"
               id="name"
               name="name"
-              className="w-full px-4 py-3 rounded-lg bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors dark:bg-slate-800 dark:border-slate-600"
+              className="w-full px-4 py-3 rounded-lg bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors dark:bg-slate-800 dark:border-slate-600 dark:placeholder:text-slate-500"
               placeholder="Your Name"
               required
             />
@@ -30,7 +30,7 @@ const Contact = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full px-4 py-3 rounded-lg bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors dark:bg-slate-800 dark:border-slate-600"
+              className="w-full px-4 py-3 rounded-lg bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors dark:bg-slate-800 dark:border-slate-600 dark:placeholder:text-slate-500"
               placeholder="Your Email"
               required
             />
@@ -44,7 +44,7 @@ const Contact = () => {
               id="message"
               name="message"
               rows={5}
-              className="w-full px-4 py-3 rounded-lg bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors dark:bg-slate-800 dark:border-slate-600"
+              className="w-full px-4 py-3 rounded-lg bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors dark:bg-slate-800 dark:border-slate-600 dark:placeholder:text-slate-500"
               placeholder="Your Message"
               required
             ></textarea>

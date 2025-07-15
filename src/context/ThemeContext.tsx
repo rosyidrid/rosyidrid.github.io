@@ -18,6 +18,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     };
 
     useEffect(() => {
+        const stored = localStorage.getItem('theme') as Theme | null;
+        if (stored) setTheme(stored);
+    }, []);
+
+    useEffect(() => {
         const root = document.documentElement; // <html>
         if (theme === 'dark') {
             root.classList.add('dark');
@@ -25,11 +30,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
             root.classList.remove('dark');
         }
     }, [theme]);
-
-    useEffect(() => {
-        const stored = localStorage.getItem('theme') as Theme | null;
-        if (stored) setTheme(stored);
-    }, []);
 
     useEffect(() => {
         localStorage.setItem('theme', theme);
@@ -40,7 +40,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
             root.classList.remove('dark');
         }
     }, [theme]);
-
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>

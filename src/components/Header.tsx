@@ -36,17 +36,17 @@ const Header = () => {
 
   const navLinks = (
     <>
-      <a href="#about" className="text-slate-600 hover:text-blue-600 py-2 dark:text-slate-400" onClick={handleLinkClick}>About</a>
-      <a href="#skills" className="text-slate-600 hover:text-blue-600 py-2 dark:text-slate-400" onClick={handleLinkClick}>Skills</a>
-      <a href="#experience" className="text-slate-600 hover:text-blue-600 py-2 dark:text-slate-400" onClick={handleLinkClick}>Experience</a>
-      <a href="#projects" className="text-slate-600 hover:text-blue-600 py-2 dark:text-slate-400" onClick={handleLinkClick}>Projects</a>
-      <a href="#contact" className="text-white bg-blue-600 px-4 py-2 rounded-full dark:bg-blue-500 dark:text-slate-900" onClick={handleLinkClick}>Contact Me</a>
+      <a href="#about" className="text-slate-600 hover:text-blue-600 py-2 dark:text-slate-400 dark:hover:text-slate-200" onClick={handleLinkClick}>About</a>
+      <a href="#skills" className="text-slate-600 hover:text-blue-600 py-2 dark:text-slate-400 dark:hover:text-slate-200" onClick={handleLinkClick}>Skills</a>
+      <a href="#experience" className="text-slate-600 hover:text-blue-600 py-2 dark:text-slate-400 dark:hover:text-slate-200" onClick={handleLinkClick}>Experience</a>
+      <a href="#projects" className="text-slate-600 hover:text-blue-600 py-2 dark:text-slate-400 dark:hover:text-slate-200" onClick={handleLinkClick}>Projects</a>
+      <a href="#contact" className="text-white bg-blue-600 px-4 py-2 rounded-full dark:bg-blue-500 dark:text-slate-900 dark:hover:text-slate-200" onClick={handleLinkClick}>Contact Me</a>
     </>
   );
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200 px-4 sm:px-6 lg:px-20 py-4 flex justify-between items-center dark:bg-slate-900/80 dark:border-slate-800 transition-colors duration-300 ease-in-out">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200 px-4 sm:px-6 lg:px-20 py-4 flex justify-between items-center dark:bg-slate-800/80 dark:border-slate-800 transition-colors duration-300 ease-in-out">
         <a href="#" className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
           <span className="text-blue-600">Ridho's</span>
           <span className="dark:text-slate-100">Portfolio</span>
