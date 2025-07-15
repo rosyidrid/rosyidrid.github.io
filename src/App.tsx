@@ -23,9 +23,9 @@ function App() {
         <div className="flex-grow flex flex-col pt-16">
           <Hero />
           <About />
+          <Education />
           <Skills />
           <Experience />
-          <Education />
           <Projects />
           <Contact />
         </div>
