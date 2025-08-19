@@ -35,7 +35,6 @@ jobs:
           host: 31.97.110.110
           username: root
           key: ${{ secrets.SSH_KEY }}
-          passphrase: ${{ secrets.SSH_PASSPHRASE }}
           port: 22
           script: |
             cd ../var/www/rosyidrid.com
