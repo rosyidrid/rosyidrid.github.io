@@ -32,12 +32,46 @@ jobs:
       - name: Deploy to VPS via SSH
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: 31.97.110.110
-          username: root
+          host: ${{ secrets.SSH_IP }}
+          username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          port: 22
+          port: ${{secrets.SSH_PORT }}
           script: |
             cd ../var/www/rosyidrid.com
             git pull origin main
             npm install
             npm run build
+
+      # === Notifikasi Discord ===
+      - name: Notify Discord (embed)
+        if: always() # kirim apapun status job
+        env:
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          STATUS: ${{ job.status }}
+          REPO: ${{ github.repository }}
+          REF: ${{ github.ref_name }}
+          SHA: ${{ github.sha }}
+          ACTOR: ${{ github.actor }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          WORKFLOW: ${{ github.workflow }}
+        run: |
+          STATUS="${STATUS:-success}"
+          EMOJI="❌"; COLOR=15548997    # merah
+          if [ "$STATUS" = "success" ]; then EMOJI="✅"; COLOR=5763719; fi   # hijau
+          if [ "$STATUS" = "cancelled" ]; then EMOJI="🟡"; COLOR=16776960; fi # kuning
+
+          DESC=$'**Repo:** '"$REPO"$'\n**Branch:** '"$REF"$'\n**Commit:** '"${SHA:0:7}"$'\n**By:** '"$ACTOR"$'\n[View run]('"$RUN_URL"$')'
+
+          # Pakai jq kalau tersedia, kalau tidak fallback ke payload simple
+          if command -v jq >/dev/null 2>&1; then
+            jq -nc --arg title "$EMOJI $WORKFLOW • $STATUS" \
+                   --arg desc "$DESC" \
+                   --argjson color $COLOR \
+                   '{embeds:[{title:$title, description:$desc, color:$color}]}' \
+            | curl -sS -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"
+          else
+            # Fallback tanpa embed
+            MSG="**$EMOJI $STATUS** on **$REPO**\nBranch: \`$REF\`\nCommit: \`${SHA:0:7}\`\nBy: **$ACTOR**\nRun: $RUN_URL"
+            PAYLOAD=$(printf '{"content": "%s"}' "$(echo "$MSG" | sed 's/"/\\"/g')")
+            curl -sS -H "Content-Type: application/json" -d "$PAYLOAD" "$WEBHOOK_URL"
+          fi
