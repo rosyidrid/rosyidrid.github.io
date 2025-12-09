@@ -38,6 +38,7 @@ jobs:
           port: ${{secrets.SSH_PORT }}
           script: |
             cd ../var/www/rosyidrid.com
+            git stash
             git pull origin main
             npm install
             npm run build
