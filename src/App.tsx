@@ -10,28 +10,28 @@ import Footer from './components/Footer';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
   return (
-    <ThemeProvider>
-      <div className="min-h-screen flex flex-col relative bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100">
-        <Header />
-        <div className="flex-grow flex flex-col pt-16">
-          <Hero />
-          <About />
-          <Education />
-          <Skills />
-          <Experience />
-          <Projects />
-          <Contact />
-        </div>
-        <Footer />
-      </div>
-    </ThemeProvider>
+    // <ThemeProvider> - Removed to enforce dark mode
+    <div className="min-h-screen flex flex-col relative overflow-hidden font-sans selection:bg-purple-500 selection:text-white">
+      <Header />
+      <main className="flex-grow flex flex-col relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Background particles or effects could go here as absolute positioned elements */}
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Education />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+    // </ThemeProvider>
   );
 }
 

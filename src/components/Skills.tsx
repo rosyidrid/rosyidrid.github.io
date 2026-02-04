@@ -1,117 +1,124 @@
 import {
-    FaJsSquare,
-    FaReact,
-    FaNodeJs,
-    FaGitAlt,
-    FaFigma,
+    FaReact, FaNodeJs, FaGitAlt, FaFigma,
 } from 'react-icons/fa';
 import {
-    SiTailwindcss,
-    SiNextdotjs,
-    SiTypescript,
-    SiMysql,
-    SiFlutter,
-    SiNestjs,
-    SiExpress,
-    SiPostgresql,
-    SiKotlin,
-    SiVite,
-    SiNotion,
-    SiJira,
-    SiBitbucket,
-    SiPostman,
-    SiRedis,
-    SiDart,
-    SiPhp,
-    SiLaravel,
+    SiTailwindcss, SiNextdotjs, SiTypescript, SiMysql, SiFlutter, SiNestjs,
+    SiExpress, SiPostgresql, SiKotlin, SiVite, SiJira,
+    SiPostman, SiRedis, SiDart, SiPhp, SiLaravel,
 } from 'react-icons/si';
+import { motion } from 'framer-motion';
 
 const skillsByCategory = [
     {
-        category: 'Programming Languages',
+        category: 'Frontend Power',
+        description: 'Building beautiful, responsive interfaces',
         skills: [
-            { name: 'JavaScript', icon: <FaJsSquare className="w-12 h-12 text-yellow-400" /> },
-            { name: 'TypeScript', icon: <SiTypescript className="w-12 h-12 text-blue-500" /> },
-            { name: 'Kotlin', icon: <SiKotlin className="w-12 h-12 text-red-600" /> },
-            { name: 'Dart', icon: <SiDart className="w-12 h-12 text-sky-500" /> },
-            { name: 'PHP', icon: <SiPhp className="w-12 h-12 text-indigo-700" /> },
-        ]
+            { name: 'React', icon: <FaReact className="text-cyan-400" /> },
+            { name: 'Next.js', icon: <SiNextdotjs className="text-white" /> },
+            { name: 'Tailwind', icon: <SiTailwindcss className="text-teal-400" /> },
+            { name: 'TypeScript', icon: <SiTypescript className="text-blue-500" /> },
+            { name: 'Vite', icon: <SiVite className="text-purple-500" /> },
+        ],
+        colSpan: "col-span-1 md:col-span-2 lg:col-span-2",
+        bg: "bg-gradient-to-br from-blue-900/20 to-slate-900/50"
     },
     {
-        category: 'Frontend',
+        category: 'Backend Core',
+        description: 'Robust and scalable server-side solutions',
         skills: [
-            { name: 'React', icon: <FaReact className="w-12 h-12 text-cyan-400" /> },
-            { name: 'Next.js', icon: <SiNextdotjs className="w-12 h-12 text-black" /> },
-            { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-12 h-12 text-teal-400" /> },
-            { name: 'Vite', icon: <SiVite className="w-12 h-12 text-blue-600" /> },
-        ]
+            { name: 'NestJS', icon: <SiNestjs className="text-red-600" /> },
+            { name: 'Laravel', icon: <SiLaravel className="text-red-500" /> },
+            { name: 'Node.js', icon: <FaNodeJs className="text-green-500" /> },
+            { name: 'Express', icon: <SiExpress className="text-white" /> },
+            { name: 'PHP', icon: <SiPhp className="text-indigo-500" /> },
+        ],
+        colSpan: "col-span-1 md:col-span-1 lg:col-span-1",
+        bg: "bg-slate-900/50"
     },
     {
-        category: 'Backend',
+        category: 'Mobile Dev',
+        description: 'Cross-platform mobile applications',
         skills: [
-            { name: 'Node.js', icon: <FaNodeJs className="w-12 h-12 text-green-500" /> },
-            { name: 'Express.js', icon: <SiExpress className="w-12 h-12 text-black" /> },
-            { name: 'NestJS', icon: <SiNestjs className="w-12 h-12 text-red-600" /> },
-            { name: 'Laravel', icon: <SiLaravel className="w-12 h-12 text-red-500" /> },
-        ]
+            { name: 'Flutter', icon: <SiFlutter className="text-sky-400" /> },
+            { name: 'Dart', icon: <SiDart className="text-blue-400" /> },
+            { name: 'Kotlin', icon: <SiKotlin className="text-orange-500" /> },
+            { name: 'React Native', icon: <FaReact className="text-cyan-400" /> },
+        ],
+        colSpan: "col-span-1 md:col-span-1 lg:col-span-1",
+        bg: "bg-slate-900/50"
     },
     {
-        category: 'Mobile',
+        category: 'Data & Cloud',
+        description: 'Storage and infrastructure',
         skills: [
-            { name: 'React Native', icon: <FaReact className="w-12 h-12 text-cyan-400" /> },
-            { name: 'Flutter', icon: <SiFlutter className="w-12 h-12 text-sky-500" /> },
-            { name: 'Kotlin', icon: <SiKotlin className="w-12 h-12 text-red-600" /> },
-        ]
+            { name: 'PostgreSQL', icon: <SiPostgresql className="text-blue-400" /> },
+            { name: 'MySQL', icon: <SiMysql className="text-blue-500" /> },
+            { name: 'Redis', icon: <SiRedis className="text-red-500" /> },
+        ],
+        colSpan: "col-span-1 md:col-span-2 lg:col-span-2",
+        bg: "bg-gradient-to-bl from-purple-900/20 to-slate-900/50"
     },
     {
-        category: 'Database',
+        category: 'Tools & DevOps',
+        description: 'Workflow and efficiency',
         skills: [
-            { name: 'MySQL', icon: <SiMysql className="w-12 h-12 text-blue-600" /> },
-            { name: 'PostgreSQL', icon: <SiPostgresql className="w-12 h-12 text-blue-600" /> },
-            { name: 'Redis', icon: <SiRedis className="w-12 h-12 text-red-600" /> },
-        ]
-    },
-    {
-        category: 'Tools',
-        skills: [
-            { name: 'Git', icon: <FaGitAlt className="w-12 h-12 text-orange-600" /> },
-            { name: 'Figma', icon: <FaFigma className="w-12 h-12 text-purple-500" /> },
-            { name: 'Postman', icon: <SiPostman className="w-12 h-12 text-orange-600" /> },
-            { name: 'Notion', icon: <SiNotion className="w-12 h-12" /> },
-            { name: 'Jira', icon: <SiJira className="w-12 h-12 text-blue-600" /> },
-            { name: 'Bitbucket', icon: <SiBitbucket className="w-12 h-12 text-blue-600" /> },
-        ]
+            { name: 'Git', icon: <FaGitAlt className="text-orange-600" /> },
+            { name: 'Figma', icon: <FaFigma className="text-pink-500" /> },
+            { name: 'Jira', icon: <SiJira className="text-blue-500" /> },
+            { name: 'Postman', icon: <SiPostman className="text-orange-500" /> },
+        ],
+        colSpan: "col-span-1 lg:col-span-3",
+        bg: "bg-slate-900/30"
     }
 ];
 
 const Skills = () => {
     return (
-        <section id="skills" className="py-20 px-4">
-            <div className="max-w-6xl mx-auto">
-                <h2 className="text-4xl font-bold text-center text-slate-900 mb-12 dark:text-slate-100">
-                    My <span className="text-blue-600">Skills</span>
-                </h2>
+        <section id="skills" className="py-24 relative">
+            <div className="container mx-auto px-6 max-w-7xl">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-4xl font-bold text-white mb-4">
+                        Tech <span className="text-blue-500">Stack</span>
+                    </h2>
+                    <p className="text-slate-400 max-w-2xl mx-auto">
+                        A curated collection of technologies I use to build amazing products.
+                    </p>
+                </motion.div>
 
-                {skillsByCategory.map((category, categoryIndex) => (
-                    <div key={categoryIndex} className="mb-12" data-aos="fade-up">
-                        <h3 className="text-2xl font-semibold text-slate-800 mb-6 border-b-2 border-blue-100 pb-2 dark:text-slate-400">
-                            {category.category}
-                        </h3>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                            {category.skills.map((skill, skillIndex) => (
-                                <div
-                                    key={skillIndex}
-                                    className="bg-slate-50 dark:bg-slate-800 border border-slate-200/80 rounded-lg p-4 flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-lg hover:scale-105 hover:shadow-blue-500/10 dark:border-slate-400 dark:hover:shadow-blue-500/10 h-full"
-                                    data-aos="fade-up"
-                                    data-aos-delay={`${50 * (skillIndex % 3)}`}
-                                >
-                                    {skill.icon}
-                                    <p className="mt-3 text-sm font-medium text-slate-700 dark:text-slate-400">{skill.name}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                ))}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {skillsByCategory.map((section, idx) => (
+                        <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1 }}
+                            whileHover={{ y: -5 }}
+                            className={`${section.colSpan} ${section.bg} backdrop-blur-sm border border-white/5 rounded-3xl p-6 hover:border-white/10 transition-all duration-300 group`}
+                        >
+                            <h3 className="text-xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                                {section.category}
+                            </h3>
+                            <p className="text-slate-500 text-sm mb-6">{section.description}</p>
+
+                            <div className="flex flex-wrap gap-4">
+                                {section.skills.map((skill, sIdx) => (
+                                    <div key={sIdx} className="flex flex-col items-center gap-2 group/icon">
+                                        <div className="text-3xl p-3 bg-white/5 rounded-xl border border-white/5 group-hover/icon:bg-white/10 group-hover/icon:scale-110 transition-all duration-300">
+                                            {skill.icon}
+                                        </div>
+                                        <span className="text-xs text-slate-400 group-hover/icon:text-white transition-colors">{skill.name}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
         </section>
     );

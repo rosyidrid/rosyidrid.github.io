@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const experiences = [
   {
     title: "Full Stack Developer",
@@ -30,7 +32,7 @@ const experiences = [
   },
   {
     title: "Mobile Programmer",
-    company: "Sekretariat Jenderal Dewan Perwakilan Rakyat Republik Indonesia (DPR RI)",
+    company: "DPR RI (Internship)",
     period: "August 2022 – December 2022",
     skills: ["Kotlin", "Android Studio", "Retrofit", "Zend Framework"],
     description: [
@@ -58,63 +60,68 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20" data-aos="fade-up">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-slate-900 mb-8 dark:text-slate-100">My Work <span className="text-blue-600">Journey</span></h2>
-        <div className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 w-0.5 h-full bg-slate-300 hidden md:block dark:bg-slate-600" aria-hidden="true"></div>
+    <section id="experience" className="py-20 relative">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <h2 className="text-4xl font-bold text-center text-white mb-20">
+          My <span className="text-blue-500">Journey</span>
+        </h2>
 
+        <div className="relative">
           {experiences.map((exp, index) => (
-            <div key={index} className="mb-8 flex md:justify-between items-center w-full flex-col md:flex-row">
-              {/* Content for right side */}
-              {index % 2 === 0 ? (
-                <>
-                  <div className="w-full md:w-5/12"></div>
-                  <div className="hidden md:flex w-1/12 justify-center">
-                    <div className="ml-0.5 w-4 h-4 bg-blue-500 rounded-full z-10"></div>
-                  </div>
-                  <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-lg border border-slate-200 dark:bg-slate-800" data-aos="fade-left">
-                    <h3 className="font-bold text-slate-900 text-xl dark:text-slate-100">{exp.title}</h3>
-                    <p className="text-sm font-semibold text-blue-600 dark:text-blue-400">{exp.company}</p>
-                    <p className="text-sm text-gray-500 mb-3 dark:text-gray-400">{exp.period}</p>
-                    <div className="flex flex-wrap gap-2 mb-3">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="mb-12 relative pl-8 md:pl-0"
+            >
+              {/* Timeline Line */}
+              <div className="absolute left-0 md:left-1/2 w-0.5 h-full bg-gradient-to-b from-blue-500 to-purple-500/20 top-0 -translate-x-1/2 hidden md:block" />
+
+              <div className={`flex flex-col md:flex-row items-center justify-between gap-8 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}>
+                <div className="w-full md:w-5/12" />
+
+                {/* Timeline Dot */}
+                <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-slate-900 shadow-[0_0_10px_#3b82f6] -translate-x-[5px] md:-translate-x-1/2 top-0 mt-1.5" />
+
+                <div className="w-full md:w-5/12">
+                  <div className="bg-slate-900/50 backdrop-blur-md border border-white/5 p-6 rounded-2xl hover:border-blue-500/30 transition-all duration-300 group">
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
+                      <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                        {exp.title}
+                      </h3>
+                      <span className="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20">
+                        {exp.period}
+                      </span>
+                    </div>
+
+                    <h4 className="text-lg font-medium text-slate-300 mb-4 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-blue-500" />
+                      {exp.company}
+                    </h4>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
                       {exp.skills.map((skill, i) => (
-                        <span key={i} className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full dark:text-slate-100 dark:bg-blue-600">{skill}</span>
+                        <span key={i} className="text-xs text-slate-400 bg-white/5 px-2 py-1 rounded hover:bg-white/10 transition-colors cursor-default">
+                          {skill}
+                        </span>
                       ))}
                     </div>
-                    <ul className="list-disc list-inside text-slate-600 space-y-1 text-sm dark:text-slate-400">
+
+                    <ul className="space-y-3">
                       {exp.description.map((item, i) => (
-                        <li key={i}>{item}</li>
+                        <li key={i} className="text-sm text-slate-400 leading-relaxed flex items-start gap-2">
+                          <span className="mt-1.5 w-1 h-1 rounded-full bg-slate-600 flex-shrink-0" />
+                          {item}
+                        </li>
                       ))}
                     </ul>
                   </div>
-                </>
-              ) : (
-                // Content for left side
-                <>
-                  <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-lg border border-slate-200 dark:bg-slate-800" data-aos="fade-right">
-                    <h3 className="font-bold text-slate-900 text-xl dark:text-slate-100">{exp.title}</h3>
-                    <p className="text-sm font-semibold text-blue-600 dark:text-blue-400">{exp.company}</p>
-                    <p className="text-sm text-gray-500 mb-3 dark:text-gray-400">{exp.period}</p>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {exp.skills.map((skill, i) => (
-                        <span key={i} className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full dark:text-slate-100 dark:bg-blue-600">{skill}</span>
-                      ))}
-                    </div>
-                    <ul className="list-disc list-inside text-slate-600 space-y-1 text-sm dark:text-slate-400">
-                      {exp.description.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="hidden md:flex w-1/12 justify-center">
-                    <div className="ml-0.5 w-4 h-4 bg-blue-500 rounded-full z-10"></div>
-                  </div>
-                  <div className="w-full md:w-5/12"></div>
-                </>
-              )}
-            </div>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

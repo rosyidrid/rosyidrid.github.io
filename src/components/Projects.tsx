@@ -147,29 +147,60 @@ const Projects = () => {
 
   return (
     <>
-      <section id="projects" className="py-20 px-4" data-aos="fade-up">
-        <h2 className="text-4xl font-bold text-center text-slate-900 mb-10 dark:text-slate-100">My <span className="text-blue-600">Projects</span></h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {projectsData.map((project, index) => (
-            <div
-              key={index}
-              className="dark:bg-slate-800 bg-white border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/10 cursor-pointer"
-              data-aos="fade-up"
-              data-aos-delay={`${100 * (index + 1)}`}
-              onClick={() => handleOpenModal(project)}
-            >
-              <img src={project.images[0]} alt={project.title} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-2 dark:text-slate-100">{project.title}</h3>
-                <p className="text-slate-600 mb-4 text-sm dark:text-slate-400">{project.shortDescription}</p>
-                <button
-                  className="text-blue-600 font-semibold hover:underline text-sm"
-                >
-                  View Details
-                </button>
+      <section id="projects" className="py-24 relative">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <h2 className="text-4xl font-bold text-center text-white mb-16">
+            Featured <span className="text-blue-500">Projects</span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projectsData.map((project, index) => (
+              <div
+                key={index}
+                className="group relative bg-slate-900/50 backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 cursor-pointer"
+                onClick={() => handleOpenModal(project)}
+              >
+                {/* Image Overlay Gradient */}
+                <div className="relative h-56 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60 z-10" />
+                  <img
+                    src={project.images[0]}
+                    alt={project.title}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 right-4 z-20">
+                    <span className="bg-blue-600/90 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md">
+                      {project.tags[0]}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-6 relative z-20">
+                  <h3 className="text-xl font-bold text-white mb-3 line-clamp-1 group-hover:text-blue-400 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-slate-400 text-sm mb-6 line-clamp-3 leading-relaxed">
+                    {project.shortDescription}
+                  </p>
+
+                  <div className="flex items-center justify-between mt-auto">
+                    <div className="flex -space-x-2">
+                      {/* Mini tech stack icons or generic circles if no icons */}
+                      {[...Array(3)].map((_, i) => (
+                        <div key={i} className="w-8 h-8 rounded-full bg-slate-800 border-2 border-slate-900 flex items-center justify-center text-xs text-slate-500">
+                          #
+                        </div>
+                      ))}
+                    </div>
+                    <span className="text-blue-400 text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                      View Details
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </span>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

@@ -2,6 +2,14 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --font-sans: "Poppins", sans-serif;
+  --color-dark-bg: #0f172a;
+  --color-dark-card: #1e293b;
+  --color-primary: #3b82f6;
+  --color-accent: #8b5cf6;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -12,4 +20,10 @@ body {
   position: relative;
   width: 100%;
   overflow-x: hidden;
+  background-color: var(--color-dark-bg);
+  color: #f8fafc;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+  background-attachment: fixed;
 }
