@@ -1,9 +1,35 @@
 const Footer = () => {
   return (
-    <footer className="text-center py-8">
-      <p className="text-slate-500 text-sm">
-        &copy; {new Date().getFullYear()} Ridho. Crafted with <span className="text-red-500">♥</span> and React.
-      </p>
+    <footer
+      style={{
+        padding: "40px 0",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        flexWrap: "wrap",
+        gap: "12px",
+      }}
+    >
+      <span
+        style={{
+          fontFamily: "JetBrains Mono, monospace",
+          fontSize: "11px",
+          color: "#333",
+          letterSpacing: "0.08em",
+        }}
+      >
+        © {new Date().getFullYear()} Muhammad Rosyid Ridho
+      </span>
+      <span
+        style={{
+          fontFamily: "JetBrains Mono, monospace",
+          fontSize: "11px",
+          color: "#222",
+          letterSpacing: "0.08em",
+        }}
+      >
+        Built with React + Vite
+      </span>
     </footer>
   );
 };

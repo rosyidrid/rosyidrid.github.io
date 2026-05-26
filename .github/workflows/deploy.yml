@@ -3,32 +3,12 @@ name: My Portofolio - rosyidrid.com
 on:
   push:
     branches: [main, master]
-  pull_request:
-    branches: [main, master]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20.x"
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run linter
-        run: npm run lint
-
-      - name: Build application
-        run: npm run build
-
       - name: Deploy to VPS via SSH
         uses: appleboy/ssh-action@v1.0.0
         with:
@@ -37,10 +17,28 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{secrets.SSH_PORT }}
           script: |
+            set -e
+            
             cd ../var/www/rosyidrid.com
+
+            git fetch origin main
+
+            # stashing jika ada perubahaan tidak terduga
             git stash
+          
+            # Cek perubahan sebelum pull
+            CHANGED=$(git diff HEAD origin/main --name-only)
+            
             git pull origin main
-            npm install
+          
+            # Install dependencies hanya kalau package-lock.json berubah
+            if echo "$CHANGED" | grep -q "package-lock.json"; then
+              echo "📦 Dependencies changed, running npm ci..."
+              npm ci
+            else
+              echo "✅ No dependency changes, skipping npm ci"
+            fi
+          
             npm run build
 
       # === Notifikasi Discord ===

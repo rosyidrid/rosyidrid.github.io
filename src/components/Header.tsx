@@ -1,119 +1,207 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+
+const navLinks = [
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Experience", href: "#experience" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
+];
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact", isButton: true },
-  ];
 
   return (
     <>
-      <motion.header
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "py-4" : "py-6"
-          }`}
+      <header
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 50,
+          backgroundColor: scrolled ? "rgba(10,10,10,0.95)" : "transparent",
+          borderBottom: scrolled ? "1px solid #1e1e1e" : "1px solid transparent",
+          transition: "background-color 0.3s, border-color 0.3s",
+        }}
       >
         <div
-          className={`mx-auto max-w-7xl px-6 md:px-12 flex justify-between items-center transition-all duration-300 ${isScrolled
-            ? "bg-slate-900/40 backdrop-blur-xl border border-white/5 rounded-full py-3 mx-4 md:mx-auto max-w-5xl shadow-2xl shadow-blue-500/5"
-            : "bg-transparent"
-            }`}
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "0 32px",
+            height: "60px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
         >
           {/* Logo */}
-          <a href="#" className="font-bold text-xl md:text-2xl tracking-tighter group">
-            <span className="text-white group-hover:text-blue-400 transition-colors">Rosyidrid</span>
-            <span className="text-blue-500">.com</span>
+          <a
+            href="#"
+            style={{
+              fontFamily: "JetBrains Mono, monospace",
+              fontSize: "14px",
+              fontWeight: 500,
+              color: "#f0f0f0",
+              textDecoration: "none",
+              letterSpacing: "0.05em",
+            }}
+          >
+            RR<span style={{ color: "#c8ff00" }}>.</span>
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav
+            style={{ display: "flex", alignItems: "center", gap: "32px" }}
+            className="hidden md:flex"
+          >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-all duration-300 ${link.isButton
-                  ? "bg-white text-slate-900 px-5 py-2 rounded-full hover:bg-blue-500 hover:text-white hover:shadow-lg hover:shadow-blue-500/25"
-                  : "text-slate-300 hover:text-white hover:tracking-wide"
-                  }`}
+                style={{
+                  fontFamily: "JetBrains Mono, monospace",
+                  fontSize: "12px",
+                  color: "#555555",
+                  textDecoration: "none",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#f0f0f0")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#555555")}
               >
                 {link.name}
               </a>
             ))}
+            <a
+              href="https://docs.google.com/document/d/1TLJEE5fVVUUC7O_X_flZqUy-wXmGAR56/edit?usp=sharing&ouid=101248039682369145296&rtpof=true&sd=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "JetBrains Mono, monospace",
+                fontSize: "12px",
+                color: "#000",
+                backgroundColor: "#c8ff00",
+                padding: "7px 16px",
+                textDecoration: "none",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                fontWeight: 600,
+                transition: "opacity 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+            >
+              Resume
+            </a>
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Hamburger */}
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-white focus:outline-none p-2"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden"
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: "8px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "5px",
+            }}
           >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <span
-                className={`w-full h-0.5 bg-white transition-transform duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
-                  }`}
-              />
-              <span
-                className={`w-full h-0.5 bg-white transition-opacity duration-300 ${isMobileMenuOpen ? "opacity-0" : ""
-                  }`}
-              />
-              <span
-                className={`w-full h-0.5 bg-white transition-transform duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-2.5" : ""
-                  }`}
-              />
-            </div>
+            <span
+              style={{
+                display: "block",
+                width: "22px",
+                height: "1px",
+                backgroundColor: "#f0f0f0",
+                transition: "transform 0.3s",
+                transform: mobileOpen ? "rotate(45deg) translate(4px, 4px)" : "none",
+              }}
+            />
+            <span
+              style={{
+                display: "block",
+                width: "22px",
+                height: "1px",
+                backgroundColor: "#f0f0f0",
+                opacity: mobileOpen ? 0 : 1,
+                transition: "opacity 0.3s",
+              }}
+            />
+            <span
+              style={{
+                display: "block",
+                width: "22px",
+                height: "1px",
+                backgroundColor: "#f0f0f0",
+                transition: "transform 0.3s",
+                transform: mobileOpen ? "rotate(-45deg) translate(4px, -4px)" : "none",
+              }}
+            />
           </button>
         </div>
-      </motion.header>
+      </header>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            animate={{ opacity: 1, backdropFilter: "blur(20px)" }}
-            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            className="fixed inset-0 z-40 bg-slate-900/80 md:hidden flex items-center justify-center"
-          >
-            <motion.nav
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 20, opacity: 0 }}
-              transition={{ delay: 0.1 }}
-              className="flex flex-col items-center gap-8"
-            >
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-2xl font-light ${link.isButton
-                    ? "text-blue-400 font-semibold"
-                    : "text-white hover:text-blue-400"
-                    }`}
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div
+          className="md:hidden"
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 40,
+            backgroundColor: "#0a0a0a",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "center",
+            padding: "32px",
+          }}
+        >
+          <nav style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
+            {navLinks.map((link, i) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "36px",
+                  fontWeight: 700,
+                  color: "#f0f0f0",
+                  textDecoration: "none",
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1,
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "JetBrains Mono, monospace",
+                    fontSize: "12px",
+                    color: "#c8ff00",
+                    marginRight: "12px",
+                    verticalAlign: "middle",
+                  }}
                 >
-                  {link.name}
-                </a>
-              ))}
-            </motion.nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                  0{i + 1}
+                </span>
+                {link.name}
+              </a>
+            ))}
+          </nav>
+        </div>
+      )}
     </>
   );
 };

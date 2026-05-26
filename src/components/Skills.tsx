@@ -1,127 +1,198 @@
 import {
-    FaReact, FaNodeJs, FaGitAlt, FaFigma,
+  FaReact, FaNodeJs, FaGitAlt, FaFigma,
 } from 'react-icons/fa';
 import {
-    SiTailwindcss, SiNextdotjs, SiTypescript, SiMysql, SiFlutter, SiNestjs,
-    SiExpress, SiPostgresql, SiKotlin, SiVite, SiJira,
-    SiPostman, SiRedis, SiDart, SiPhp, SiLaravel,
+  SiTailwindcss, SiNextdotjs, SiTypescript, SiMysql, SiFlutter, SiNestjs,
+  SiExpress, SiPostgresql, SiKotlin, SiVite, SiJira,
+  SiPostman, SiRedis, SiDart, SiPhp, SiLaravel,
 } from 'react-icons/si';
-import { motion } from 'framer-motion';
 
-const skillsByCategory = [
-    {
-        category: 'Frontend Power',
-        description: 'Building beautiful, responsive interfaces',
-        skills: [
-            { name: 'React', icon: <FaReact className="text-cyan-400" /> },
-            { name: 'Next.js', icon: <SiNextdotjs className="text-white" /> },
-            { name: 'Tailwind', icon: <SiTailwindcss className="text-teal-400" /> },
-            { name: 'TypeScript', icon: <SiTypescript className="text-blue-500" /> },
-            { name: 'Vite', icon: <SiVite className="text-purple-500" /> },
-        ],
-        colSpan: "col-span-1 md:col-span-2 lg:col-span-2",
-        bg: "bg-gradient-to-br from-blue-900/20 to-slate-900/50"
-    },
-    {
-        category: 'Backend Core',
-        description: 'Robust and scalable server-side solutions',
-        skills: [
-            { name: 'NestJS', icon: <SiNestjs className="text-red-600" /> },
-            { name: 'Laravel', icon: <SiLaravel className="text-red-500" /> },
-            { name: 'Node.js', icon: <FaNodeJs className="text-green-500" /> },
-            { name: 'Express', icon: <SiExpress className="text-white" /> },
-            { name: 'PHP', icon: <SiPhp className="text-indigo-500" /> },
-        ],
-        colSpan: "col-span-1 md:col-span-1 lg:col-span-1",
-        bg: "bg-slate-900/50"
-    },
-    {
-        category: 'Mobile Dev',
-        description: 'Cross-platform mobile applications',
-        skills: [
-            { name: 'Flutter', icon: <SiFlutter className="text-sky-400" /> },
-            { name: 'Dart', icon: <SiDart className="text-blue-400" /> },
-            { name: 'Kotlin', icon: <SiKotlin className="text-orange-500" /> },
-            { name: 'React Native', icon: <FaReact className="text-cyan-400" /> },
-        ],
-        colSpan: "col-span-1 md:col-span-1 lg:col-span-1",
-        bg: "bg-slate-900/50"
-    },
-    {
-        category: 'Data & Cloud',
-        description: 'Storage and infrastructure',
-        skills: [
-            { name: 'PostgreSQL', icon: <SiPostgresql className="text-blue-400" /> },
-            { name: 'MySQL', icon: <SiMysql className="text-blue-500" /> },
-            { name: 'Redis', icon: <SiRedis className="text-red-500" /> },
-        ],
-        colSpan: "col-span-1 md:col-span-2 lg:col-span-2",
-        bg: "bg-gradient-to-bl from-purple-900/20 to-slate-900/50"
-    },
-    {
-        category: 'Tools & DevOps',
-        description: 'Workflow and efficiency',
-        skills: [
-            { name: 'Git', icon: <FaGitAlt className="text-orange-600" /> },
-            { name: 'Figma', icon: <FaFigma className="text-pink-500" /> },
-            { name: 'Jira', icon: <SiJira className="text-blue-500" /> },
-            { name: 'Postman', icon: <SiPostman className="text-orange-500" /> },
-        ],
-        colSpan: "col-span-1 lg:col-span-3",
-        bg: "bg-slate-900/30"
-    }
+const categories = [
+  {
+    label: "Frontend",
+    skills: ["React", "Next.js", "TypeScript", "Tailwind", "Vite"],
+    icons: [
+      <FaReact style={{ color: "#22d3ee" }} />,
+      <SiNextdotjs style={{ color: "#f0f0f0" }} />,
+      <SiTypescript style={{ color: "#3b82f6" }} />,
+      <SiTailwindcss style={{ color: "#14b8a6" }} />,
+      <SiVite style={{ color: "#a855f7" }} />,
+    ],
+  },
+  {
+    label: "Backend",
+    skills: ["NestJS", "Laravel", "Node.js", "Express", "PHP"],
+    icons: [
+      <SiNestjs style={{ color: "#ef4444" }} />,
+      <SiLaravel style={{ color: "#ef4444" }} />,
+      <FaNodeJs style={{ color: "#22c55e" }} />,
+      <SiExpress style={{ color: "#f0f0f0" }} />,
+      <SiPhp style={{ color: "#818cf8" }} />,
+    ],
+  },
+  {
+    label: "Mobile",
+    skills: ["Flutter", "Dart", "Kotlin", "React Native"],
+    icons: [
+      <SiFlutter style={{ color: "#38bdf8" }} />,
+      <SiDart style={{ color: "#60a5fa" }} />,
+      <SiKotlin style={{ color: "#f97316" }} />,
+      <FaReact style={{ color: "#22d3ee" }} />,
+    ],
+  },
+  {
+    label: "Database",
+    skills: ["PostgreSQL", "MySQL", "Redis"],
+    icons: [
+      <SiPostgresql style={{ color: "#60a5fa" }} />,
+      <SiMysql style={{ color: "#60a5fa" }} />,
+      <SiRedis style={{ color: "#ef4444" }} />,
+    ],
+  },
+  {
+    label: "Tools",
+    skills: ["Git", "Figma", "Jira", "Postman"],
+    icons: [
+      <FaGitAlt style={{ color: "#f97316" }} />,
+      <FaFigma style={{ color: "#ec4899" }} />,
+      <SiJira style={{ color: "#3b82f6" }} />,
+      <SiPostman style={{ color: "#f97316" }} />,
+    ],
+  },
 ];
 
 const Skills = () => {
-    return (
-        <section id="skills" className="py-24 relative">
-            <div className="container mx-auto px-6 max-w-7xl">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
+  return (
+    <section
+      id="skills"
+      style={{
+        padding: "100px 0",
+        borderBottom: "1px solid #1e1e1e",
+      }}
+    >
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "200px 1fr",
+          gap: "64px",
+          alignItems: "start",
+        }}
+        className="skills-grid"
+      >
+        {/* Section label */}
+        <div>
+          <span
+            style={{
+              fontFamily: "JetBrains Mono, monospace",
+              fontSize: "11px",
+              color: "#555",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              display: "block",
+              paddingTop: "6px",
+            }}
+          >
+            02 / Skills
+          </span>
+        </div>
+
+        {/* Content */}
+        <div>
+          <h2
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "clamp(28px, 4vw, 48px)",
+              fontWeight: 700,
+              letterSpacing: "-0.03em",
+              color: "#f0f0f0",
+              margin: "0 0 52px 0",
+              lineHeight: 1.1,
+            }}
+          >
+            Tech Stack
+          </h2>
+
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {categories.map((cat, i) => (
+              <div
+                key={cat.label}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "120px 1fr",
+                  gap: "32px",
+                  alignItems: "center",
+                  padding: "24px 0",
+                  borderTop: i === 0 ? "1px solid #1e1e1e" : "none",
+                  borderBottom: "1px solid #1e1e1e",
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "JetBrains Mono, monospace",
+                    fontSize: "11px",
+                    color: "#555",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                  }}
                 >
-                    <h2 className="text-4xl font-bold text-white mb-4">
-                        Tech <span className="text-blue-500">Stack</span>
-                    </h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto">
-                        A curated collection of technologies I use to build amazing products.
-                    </p>
-                </motion.div>
+                  {cat.label}
+                </span>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {skillsByCategory.map((section, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.1 }}
-                            whileHover={{ y: -5 }}
-                            className={`${section.colSpan} ${section.bg} backdrop-blur-sm border border-white/5 rounded-3xl p-6 hover:border-white/10 transition-all duration-300 group`}
-                        >
-                            <h3 className="text-xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
-                                {section.category}
-                            </h3>
-                            <p className="text-slate-500 text-sm mb-6">{section.description}</p>
-
-                            <div className="flex flex-wrap gap-4">
-                                {section.skills.map((skill, sIdx) => (
-                                    <div key={sIdx} className="flex flex-col items-center gap-2 group/icon">
-                                        <div className="text-3xl p-3 bg-white/5 rounded-xl border border-white/5 group-hover/icon:bg-white/10 group-hover/icon:scale-110 transition-all duration-300">
-                                            {skill.icon}
-                                        </div>
-                                        <span className="text-xs text-slate-400 group-hover/icon:text-white transition-colors">{skill.name}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </motion.div>
-                    ))}
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                  {cat.skills.map((skill, si) => (
+                    <div
+                      key={skill}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "7px",
+                        padding: "6px 12px",
+                        border: "1px solid #1e1e1e",
+                        backgroundColor: "#111",
+                        transition: "border-color 0.2s, background-color 0.2s",
+                        cursor: "default",
+                      }}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLDivElement).style.borderColor = "#333";
+                        (e.currentTarget as HTMLDivElement).style.backgroundColor = "#161616";
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLDivElement).style.borderColor = "#1e1e1e";
+                        (e.currentTarget as HTMLDivElement).style.backgroundColor = "#111";
+                      }}
+                    >
+                      <span style={{ fontSize: "14px", display: "flex" }}>
+                        {cat.icons[si]}
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: "Inter, sans-serif",
+                          fontSize: "13px",
+                          color: "#888",
+                          fontWeight: 400,
+                        }}
+                      >
+                        {skill}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-            </div>
-        </section>
-    );
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .skills-grid {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+          }
+        }
+      `}</style>
+    </section>
+  );
 };
 
 export default Skills;

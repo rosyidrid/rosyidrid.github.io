@@ -1,6 +1,5 @@
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { FaTimes } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaTimes, FaChevronLeft, FaChevronRight, FaExternalLinkAlt } from 'react-icons/fa';
 
 export interface Project {
   title: string;
@@ -18,73 +17,224 @@ interface ProjectModalProps {
 }
 
 const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
+  const [imgIndex, setImgIndex] = useState(0);
+
   if (!project) return null;
 
+  const prev = () => setImgIndex((i) => (i - 1 + project.images.length) % project.images.length);
+  const next = () => setImgIndex((i) => (i + 1) % project.images.length);
+
   return (
-    <div className="fixed inset-0 z-50">
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 50,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "24px",
+      }}
+    >
       {/* Overlay */}
       <div
-        className="absolute inset-0 bg-black/70 transition-opacity"
-        aria-hidden="true"
         onClick={onClose}
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundColor: "rgba(0,0,0,0.85)",
+        }}
       />
-      {/* Modal Content */}
+
+      {/* Modal */}
       <div
-        className="flex justify-center items-center min-h-screen p-4 "
-        style={{ pointerEvents: 'none' }}
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          position: "relative",
+          backgroundColor: "#111",
+          border: "1px solid #1e1e1e",
+          width: "100%",
+          maxWidth: "760px",
+          maxHeight: "90vh",
+          overflowY: "auto",
+        }}
       >
-        <div
-          className="bg-white rounded-lg overflow-hidden shadow-xl max-w-3xl w-full relative transform transition-all dark:bg-slate-800"
-          onClick={e => e.stopPropagation()}
-          data-aos="zoom-in"
-          style={{ pointerEvents: 'auto' }}
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          style={{
+            position: "absolute",
+            top: "16px",
+            right: "16px",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            color: "#555",
+            zIndex: 10,
+            padding: "4px",
+            transition: "color 0.2s",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "#f0f0f0")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
         >
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 text-slate-500 hover:text-slate-900 z-10"
-            aria-label="Close modal"
+          <FaTimes size={18} />
+        </button>
+
+        {/* Image carousel */}
+        <div style={{ position: "relative", backgroundColor: "#0a0a0a", height: "300px" }}>
+          <img
+            src={project.images[imgIndex]}
+            alt={`${project.title} screenshot`}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+            }}
+          />
+          {project.images.length > 1 && (
+            <>
+              <button
+                onClick={prev}
+                style={{
+                  position: "absolute",
+                  left: "12px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  background: "rgba(0,0,0,0.6)",
+                  border: "1px solid #222",
+                  color: "#888",
+                  cursor: "pointer",
+                  padding: "8px 10px",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#f0f0f0")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#888")}
+              >
+                <FaChevronLeft size={14} />
+              </button>
+              <button
+                onClick={next}
+                style={{
+                  position: "absolute",
+                  right: "12px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  background: "rgba(0,0,0,0.6)",
+                  border: "1px solid #222",
+                  color: "#888",
+                  cursor: "pointer",
+                  padding: "8px 10px",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#f0f0f0")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#888")}
+              >
+                <FaChevronRight size={14} />
+              </button>
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "12px",
+                  right: "16px",
+                  fontFamily: "JetBrains Mono, monospace",
+                  fontSize: "10px",
+                  color: "#444",
+                  letterSpacing: "0.1em",
+                }}
+              >
+                {imgIndex + 1} / {project.images.length}
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Content */}
+        <div style={{ padding: "32px" }}>
+          <h2
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "22px",
+              fontWeight: 700,
+              color: "#f0f0f0",
+              letterSpacing: "-0.02em",
+              margin: "0 0 16px 0",
+            }}
           >
-            <FaTimes size={24} />
-          </button>
+            {project.title}
+          </h2>
 
-          <div className="max-h-[90vh] overflow-y-auto">
-            <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay>
-              {project.images.map((image, index) => (
-                <div key={index}>
-                  <img src={image} alt={`${project.title} screenshot ${index + 1}`} className="object-cover w-full h-64 md:h-96" />
-                </div>
-              ))}
-            </Carousel>
-
-            <div className="p-6 md:p-8">
-              <h2 className="text-3xl font-bold text-slate-900 mb-2 dark:text-slate-100">{project.title}</h2>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full dark:bg-blue-600 dark:text-slate-100">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <p className="text-slate-600 leading-relaxed whitespace-pre-wrap dark:text-slate-400">{project.longDescription}</p>
-              <div className="mt-6 flex gap-4">
-                {project.liveUrl && (
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-700 transition-colors dark:bg-blue-600 dark:text-slate-100">
-                    View Live
-                  </a>
-                )}
-                {project.sourceUrl && (
-                  <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-block bg-slate-200 text-slate-800 font-bold py-2 px-6 rounded-full hover:bg-slate-300 transition-colors dark:bg-slate-600 dark:text-slate-100">
-                    Source Code
-                  </a>
-                )}
-              </div>
-            </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "24px" }}>
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                style={{
+                  fontFamily: "JetBrains Mono, monospace",
+                  fontSize: "10px",
+                  color: "#555",
+                  border: "1px solid #1e1e1e",
+                  padding: "4px 10px",
+                  letterSpacing: "0.05em",
+                  textTransform: "uppercase",
+                }}
+              >
+                {tag}
+              </span>
+            ))}
           </div>
+
+          <div
+            style={{
+              borderTop: "1px solid #1e1e1e",
+              paddingTop: "24px",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                color: "#666",
+                lineHeight: 1.8,
+                margin: 0,
+                whiteSpace: "pre-wrap",
+              }}
+            >
+              {project.longDescription.trim()}
+            </p>
+          </div>
+
+          {project.liveUrl && (
+            <div style={{ marginTop: "28px", borderTop: "1px solid #1e1e1e", paddingTop: "24px" }}>
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontFamily: "JetBrains Mono, monospace",
+                  fontSize: "12px",
+                  color: "#000",
+                  backgroundColor: "#c8ff00",
+                  padding: "10px 24px",
+                  textDecoration: "none",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  fontWeight: 600,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  transition: "opacity 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+              >
+                <FaExternalLinkAlt size={10} />
+                View Live
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
-}
-
+};
 
 export default ProjectModal;

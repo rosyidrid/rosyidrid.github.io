@@ -1,70 +1,294 @@
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-6 max-w-4xl relative z-10">
-        <div className="bg-slate-900/40 backdrop-blur-xl border border-white/5 rounded-3xl p-8 md:p-12 shadow-2xl">
-          <h2 className="text-4xl font-bold text-center text-white mb-4">
-            Let's Work <span className="text-blue-500">Together</span>
+    <section
+      id="contact"
+      style={{
+        padding: "100px 0",
+        borderBottom: "1px solid #1e1e1e",
+      }}
+    >
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "200px 1fr",
+          gap: "64px",
+          alignItems: "start",
+        }}
+        className="contact-grid"
+      >
+        {/* Section label */}
+        <div>
+          <span
+            style={{
+              fontFamily: "JetBrains Mono, monospace",
+              fontSize: "11px",
+              color: "#555",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              display: "block",
+              paddingTop: "6px",
+            }}
+          >
+            06 / Contact
+          </span>
+        </div>
+
+        {/* Content */}
+        <div>
+          <h2
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "clamp(28px, 4vw, 48px)",
+              fontWeight: 700,
+              letterSpacing: "-0.03em",
+              color: "#f0f0f0",
+              margin: "0 0 12px 0",
+              lineHeight: 1.1,
+            }}
+          >
+            Let's work together.
           </h2>
-          <p className="text-slate-400 text-center mb-12 max-w-xl mx-auto">
-            Have a project in mind or just want to say hi? I'd love to hear from you.
+          <p
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "15px",
+              color: "#555",
+              margin: "0 0 52px 0",
+              lineHeight: 1.6,
+            }}
+          >
+            Have a project or just want to say hi? Drop a message.
           </p>
 
-          <form action="mailto:rosyidridho9g@gmail.com" method="POST" className="space-y-6" encType="multipart/form-data">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="group">
-                <label htmlFor="name" className="block text-slate-400 text-sm font-medium mb-2 group-focus-within:text-blue-400 transition-colors">
+          <form
+            action="mailto:rosyidridho9g@gmail.com"
+            method="POST"
+            encType="multipart/form-data"
+            style={{ display: "flex", flexDirection: "column", gap: "0" }}
+          >
+            {/* Name */}
+            <div style={{ borderTop: "1px solid #1e1e1e" }}>
+              <label
+                htmlFor="name"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "20px",
+                  padding: "20px 0",
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "JetBrains Mono, monospace",
+                    fontSize: "10px",
+                    color: "#444",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    minWidth: "60px",
+                  }}
+                >
                   Name
-                </label>
+                </span>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all placeholder:text-slate-600"
-                  placeholder="John Doe"
+                  placeholder="Your name"
                   required
+                  style={{
+                    flex: 1,
+                    background: "none",
+                    border: "none",
+                    outline: "none",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "15px",
+                    color: "#f0f0f0",
+                    padding: "0",
+                  }}
+                  onFocus={(e) => (e.currentTarget.style.caretColor = "#c8ff00")}
                 />
-              </div>
-              <div className="group">
-                <label htmlFor="email" className="block text-slate-400 text-sm font-medium mb-2 group-focus-within:text-blue-400 transition-colors">
+              </label>
+            </div>
+
+            {/* Email */}
+            <div style={{ borderTop: "1px solid #1e1e1e" }}>
+              <label
+                htmlFor="email"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "20px",
+                  padding: "20px 0",
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "JetBrains Mono, monospace",
+                    fontSize: "10px",
+                    color: "#444",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    minWidth: "60px",
+                  }}
+                >
                   Email
-                </label>
+                </span>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all placeholder:text-slate-600"
-                  placeholder="john@example.com"
+                  placeholder="your@email.com"
                   required
+                  style={{
+                    flex: 1,
+                    background: "none",
+                    border: "none",
+                    outline: "none",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "15px",
+                    color: "#f0f0f0",
+                    padding: "0",
+                  }}
                 />
-              </div>
-            </div>
-
-            <div className="group">
-              <label htmlFor="message" className="block text-slate-400 text-sm font-medium mb-2 group-focus-within:text-blue-400 transition-colors">
-                Message
               </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all placeholder:text-slate-600 resize-none"
-                placeholder="Tell me about your project..."
-                required
-              ></textarea>
             </div>
 
-            <div className="text-center pt-4">
+            {/* Message */}
+            <div style={{ borderTop: "1px solid #1e1e1e" }}>
+              <label
+                htmlFor="message"
+                style={{
+                  display: "flex",
+                  gap: "20px",
+                  padding: "20px 0",
+                  alignItems: "flex-start",
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "JetBrains Mono, monospace",
+                    fontSize: "10px",
+                    color: "#444",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    minWidth: "60px",
+                    paddingTop: "2px",
+                  }}
+                >
+                  Message
+                </span>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  placeholder="Tell me about your project..."
+                  required
+                  style={{
+                    flex: 1,
+                    background: "none",
+                    border: "none",
+                    outline: "none",
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "15px",
+                    color: "#f0f0f0",
+                    resize: "none",
+                    padding: "0",
+                    lineHeight: 1.7,
+                  }}
+                />
+              </label>
+            </div>
+
+            <div
+              style={{
+                borderTop: "1px solid #1e1e1e",
+                paddingTop: "32px",
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
               <button
                 type="submit"
-                className="bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold py-4 px-12 rounded-full hover:shadow-lg hover:shadow-blue-500/30 hover:scale-105 transition-all duration-300 w-full md:w-auto"
+                style={{
+                  fontFamily: "JetBrains Mono, monospace",
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  color: "#000",
+                  backgroundColor: "#c8ff00",
+                  padding: "14px 36px",
+                  border: "none",
+                  cursor: "pointer",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  transition: "opacity 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
               >
                 Send Message
               </button>
             </div>
           </form>
+
+          {/* Alternate contact */}
+          <div
+            style={{
+              marginTop: "48px",
+              paddingTop: "32px",
+              borderTop: "1px solid #1e1e1e",
+              display: "flex",
+              gap: "32px",
+              flexWrap: "wrap",
+            }}
+          >
+            <a
+              href="mailto:rosyidridho9g@gmail.com"
+              style={{
+                fontFamily: "JetBrains Mono, monospace",
+                fontSize: "12px",
+                color: "#444",
+                textDecoration: "none",
+                letterSpacing: "0.05em",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#f0f0f0")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#444")}
+            >
+              rosyidridho9g@gmail.com
+            </a>
+            <a
+              href="https://www.linkedin.com/in/rosyidrid/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "JetBrains Mono, monospace",
+                fontSize: "12px",
+                color: "#444",
+                textDecoration: "none",
+                letterSpacing: "0.05em",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#f0f0f0")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#444")}
+            >
+              linkedin.com/in/rosyidrid
+            </a>
+          </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .contact-grid {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+          }
+        }
+        input::placeholder,
+        textarea::placeholder {
+          color: #2a2a2a;
+        }
+      `}</style>
     </section>
   );
 };

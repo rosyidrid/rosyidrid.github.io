@@ -1,48 +1,150 @@
-import { motion } from 'framer-motion';
-
 const About = () => {
-    return (
-        <section id="about" className="py-32 relative overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-600/10 rounded-full blur-[100px] -z-10" />
-            <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-purple-600/10 rounded-full blur-[80px] -z-10" />
+  return (
+    <section
+      id="about"
+      style={{
+        padding: "100px 0",
+        borderBottom: "1px solid #1e1e1e",
+      }}
+    >
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "200px 1fr",
+          gap: "64px",
+          alignItems: "start",
+        }}
+        className="about-grid"
+      >
+        {/* Section label */}
+        <div>
+          <span
+            style={{
+              fontFamily: "JetBrains Mono, monospace",
+              fontSize: "11px",
+              color: "#555",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              display: "block",
+              paddingTop: "6px",
+            }}
+          >
+            01 / About
+          </span>
+        </div>
 
-            <div className="container mx-auto px-6 max-w-4xl">
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="backdrop-blur-xl bg-slate-900/40 border border-white/5 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden group"
+        {/* Content */}
+        <div>
+          <h2
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "clamp(28px, 4vw, 48px)",
+              fontWeight: 700,
+              letterSpacing: "-0.03em",
+              lineHeight: 1.1,
+              color: "#f0f0f0",
+              margin: "0 0 32px 0",
+            }}
+          >
+            I build things people{" "}
+            <span style={{ color: "#c8ff00" }}>actually use.</span>
+          </h2>
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "20px",
+              maxWidth: "640px",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "16px",
+                color: "#888",
+                fontWeight: 300,
+                lineHeight: 1.8,
+                margin: 0,
+              }}
+            >
+              Full-Stack Developer with 3+ years building production-grade web
+              and mobile applications. My work spans the full stack — from
+              Flutter mobile apps to NestJS backends to Next.js frontends.
+            </p>
+            <p
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "16px",
+                color: "#888",
+                fontWeight: 300,
+                lineHeight: 1.8,
+                margin: 0,
+              }}
+            >
+              I care about clean architecture, real-world scalability, and
+              shipping on time. Not just writing code — designing systems that
+              hold up under load and grow with the business.
+            </p>
+          </div>
+
+          {/* Stats row */}
+          <div
+            style={{
+              display: "flex",
+              gap: "48px",
+              marginTop: "52px",
+              paddingTop: "40px",
+              borderTop: "1px solid #1e1e1e",
+              flexWrap: "wrap",
+            }}
+          >
+            {[
+              { value: "3+", label: "Years experience" },
+              { value: "4+", label: "Companies worked" },
+              { value: "10+", label: "Projects shipped" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <div
+                  style={{
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "36px",
+                    fontWeight: 800,
+                    color: "#f0f0f0",
+                    letterSpacing: "-0.03em",
+                    lineHeight: 1,
+                  }}
                 >
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  {stat.value}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "JetBrains Mono, monospace",
+                    fontSize: "11px",
+                    color: "#555",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    marginTop: "6px",
+                  }}
+                >
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
-                    <h2 className="text-xl md:text-5xl font-bold text-center text-white mb-10 tracking-tight">
-                        About <span className="text-blue-500">Me</span>
-                    </h2>
-
-                    <p className="text-base md:text-lg text-slate-300 leading-loose font-light text-center">
-                        I am a <span className="text-white font-semibold">Full-Stack Developer</span> with <span className="text-white font-semibold">3+ years of experience</span> building robust web and mobile applications.
-                        My stack includes <span className="text-blue-400">Flutter</span>, <span className="text-blue-400">React/Next.js</span>, <span className="text-blue-400">NestJS</span>, and <span className="text-blue-400">Laravel</span>.
-                        <br className="my-4 block" />
-                        I specialize in creating scalable, secure, and production-ready solutions.
-                        Passionate about designing efficient systems and continuously learning to keep up with the latest industry trends.
-                    </p>
-
-                    {/* <div className="mt-12 flex justify-center gap-4 flex-wrap">
-                        {['Scalable Systems', 'Clean Architecture', 'Modern UI/UX'].map((tag, index) => (
-                            <span
-                                key={index}
-                                className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-slate-400 hover:text-white hover:border-blue-500/50 transition-colors cursor-default"
-                            >
-                                # {tag}
-                            </span>
-                        ))}
-                    </div> */}
-                </motion.div>
-            </div>
-        </section>
-    );
+      <style>{`
+        @media (max-width: 640px) {
+          .about-grid {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+          }
+        }
+      `}</style>
+    </section>
+  );
 };
 
 export default About;
