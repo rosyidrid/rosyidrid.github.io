@@ -1,19 +1,19 @@
 import { useState } from "react";
 
 const experiences = [
-  {
-    title: "Full Stack Developer",
-    company: "Fingerspot",
-    period: "Jan 2024 — Present",
-    skills: ["Flutter", "GetX", "Express.js", "Laravel", "Next.js", "NestJS", "React.js", "Dart"],
-    description: [
-      "Developed WebView-based features for the fingerspot.io app (Device & Chat modules) using Flutter with MVC architecture and GetX state management.",
-      "Built a Push SDK using Express.js for real-time data transmission from attendance devices to server with low latency.",
-      "Created Task Connect — a task management app using Next.js (frontend) and NestJS (backend).",
-      "Developed Wage Connect — a payroll management system using React.js and Express.js.",
-      "Handled deployments for Task Connect and Wage Connect using FileZilla, including SSL configuration.",
-    ],
-  },
+  // {
+  //   title: "Full Stack Developer",
+  //   company: "Fingerspot",
+  //   period: "Jan 2024 — Present",
+  //   skills: ["Flutter", "GetX", "Express.js", "Laravel", "Next.js", "NestJS", "React.js", "Dart"],
+  //   description: [
+  //     "Developed WebView-based features for the fingerspot.io app (Device & Chat modules) using Flutter with MVC architecture and GetX state management.",
+  //     "Built a Push SDK using Express.js for real-time data transmission from attendance devices to server with low latency.",
+  //     "Created Task Connect — a task management app using Next.js (frontend) and NestJS (backend).",
+  //     "Developed Wage Connect — a payroll management system using React.js and Express.js.",
+  //     "Handled deployments for Task Connect and Wage Connect using FileZilla, including SSL configuration.",
+  //   ],
+  // },
   {
     title: "Mobile Programmer",
     company: "PT. Tumbuh Teknologi Finansial",
